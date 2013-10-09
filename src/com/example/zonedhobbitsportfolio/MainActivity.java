@@ -2,7 +2,10 @@ package com.example.zonedhobbitsportfolio;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View.MeasureSpec;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
@@ -28,9 +31,7 @@ public class MainActivity extends Activity {
         
         test.setAdapter(test1);
         
-        
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
