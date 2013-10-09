@@ -98,7 +98,7 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   		Bitmap fun_img_bitmap;
 	   		
 	   		//Creat a person object, send parameters.
-	   		Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
+	   		//Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
 		}
     	
     }

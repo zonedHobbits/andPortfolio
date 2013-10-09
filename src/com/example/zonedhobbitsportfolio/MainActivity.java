@@ -30,9 +30,9 @@ public class MainActivity extends Activity {
         
         // Just for test purposes
         
-        arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null);
-        arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null);
-        arraypersons[2] = new Person("Martin", null, null, null, null, null, null, null);
+        //arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null);
+        //arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null);
+        //arraypersons[2] = new Person("Martin", null, null, null, null, null, null, null);
         
         CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);
         
