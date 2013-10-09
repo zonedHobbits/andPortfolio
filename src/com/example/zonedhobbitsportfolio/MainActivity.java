@@ -31,6 +31,8 @@ public class MainActivity extends Activity {
         
         test.setAdapter(test1);
         
+        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/JSON.php");
+        
     }
 
     @Override
@@ -38,6 +40,10 @@ public class MainActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+    
+    public void setUpInfo(String url) {
+    	new Fetcher().execute(url);
     }
     
 }
