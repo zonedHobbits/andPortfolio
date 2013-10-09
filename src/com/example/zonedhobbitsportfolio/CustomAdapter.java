@@ -37,6 +37,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		
 	}
 	
+	
 	public int setLayout(){
 		
 		if(checkId == R.id.list_main) {
@@ -55,6 +56,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		
 		if(checkId == R.id.list_main) {
 			//FILL FIELDS
+			
 		}
 		else if(checkId == R.id.list_profile) {
 			//FILL FIELDS

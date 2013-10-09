@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
+import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -38,19 +39,12 @@ public class MainActivity extends Activity {
         
         test.setAdapter(test1);
         
-        DisplayMetrics displaymetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int height = displaymetrics.heightPixels;
-        int width = displaymetrics.widthPixels;
-        
-        Log.i("***HEIGHT", String.valueOf(height));
-        
         this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
         this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
+        
     }
 
-
-    @Override
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
