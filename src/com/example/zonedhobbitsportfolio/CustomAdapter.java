@@ -1,6 +1,7 @@
 package com.example.zonedhobbitsportfolio;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,15 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 	
 	private Context context;
 	private Object[] values;
+	private int layoutID;
 
 	public CustomAdapter(Context context, int resource, Object[] values) {
 		super(context, resource, values);
 		// TODO Auto-generated constructor stub
 		this.context = context;
 		this.values = values;
+		
+		Log.i("CONTEXT", context.toString());
 	}
 	
 	public View getView(int position, View convertView, ViewGroup parent){
@@ -25,6 +29,9 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		
 		return rowView;
 		
+	}
+	
+	public void setLayout(){
 	}
 
 }

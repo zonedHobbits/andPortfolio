@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
         
         test.setAdapter(test1);
         
+        
     }
 
 
