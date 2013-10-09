@@ -39,7 +39,7 @@ class FetchJSON {
                         $jsonObject["normal_img"] = $reg[normal_img];
                         $jsonObject["fun_img"] = $reg[fun_img];
                         $jsonObject["quote"] = $reg[quote];
-                        $jsonObject["contact"]["bio"] = $reg[bio];
+                        $jsonObject["bio"] = $reg[bio];
                         $jsonObject["contact"]["email"] = $reg[email];
                         $jsonObject["contact"]["twitter"] = $reg[twitter];
                         $jsonObject["contact"]["github"] = $reg[github];
@@ -51,12 +51,12 @@ class FetchJSON {
                         $numProject = 0;
                         while($reg = mysql_fetch_assoc($rsProjects)) {
                                 //add one to the var.
-                                $numProject++;
                                 //check if we are in a new project.
                                 if($reg[type] == "name") {
                                         //creat an array for one project.
                                         $project = array();
                                         $project[$reg[type]] = $reg[value];
+                                        $numProject++;
                                 }
 
                                 else if($reg[type] == "finish") {
