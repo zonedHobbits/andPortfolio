@@ -19,5 +19,6 @@ public class Person {
 	String[] contactInfo; //Email, phone, Twitter, URL
 	
 	Project[] projects;
+	
 
 }
