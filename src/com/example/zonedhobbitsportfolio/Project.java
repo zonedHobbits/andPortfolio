@@ -15,5 +15,64 @@ public class Project {
 	String type;
 	
 	Bitmap[] shots; //Screenshots, images
+
+	public Project(String name, String tagline, Person creator, String desc,
+			String type, Bitmap[] shots) {
+		super();
+		this.name = name;
+		this.tagline = tagline;
+		this.creator = creator;
+		this.desc = desc;
+		this.type = type;
+		this.shots = shots;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTagline() {
+		return tagline;
+	}
+
+	public void setTagline(String tagline) {
+		this.tagline = tagline;
+	}
+
+	public Person getCreator() {
+		return creator;
+	}
+
+	public void setCreator(Person creator) {
+		this.creator = creator;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Bitmap[] getShots() {
+		return shots;
+	}
+
+	public void setShots(Bitmap[] shots) {
+		this.shots = shots;
+	}
 	
 }
