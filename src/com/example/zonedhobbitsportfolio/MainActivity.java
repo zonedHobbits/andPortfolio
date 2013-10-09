@@ -15,8 +15,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         test = (ListView) findViewById(R.id.listView1);
-        Person[] arraypersons = new Person[1];
+        
+        Person[] arraypersons = new Person[3];
+        
+        // Just for test purposes
+        
         arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null);
+        arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null);
+        arraypersons[1] = new Person("Martin", null, null, null, null, null, null, null);
         
         CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);
         
