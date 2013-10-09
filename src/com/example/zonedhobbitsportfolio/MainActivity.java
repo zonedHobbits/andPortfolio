@@ -1,10 +1,17 @@
 package com.example.zonedhobbitsportfolio;
 
 import android.os.Bundle;
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.Menu;
 import android.view.View.MeasureSpec;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -31,9 +38,17 @@ public class MainActivity extends Activity {
         
         test.setAdapter(test1);
         
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int height = displaymetrics.heightPixels;
+        int width = displaymetrics.widthPixels;
+        
+        Log.i("***HEIGHT", String.valueOf(height));
+        
         this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
         this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
