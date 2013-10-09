@@ -30,13 +30,13 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 	public View getView(int position, View convertView, ViewGroup parent){
 		
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View rowView = inflater.inflate(R.layout.project_list_row, parent, false);
+		View rowView = inflater.inflate(setLayout(), parent, false);
 		
 		return rowView;
 		
 	}
 	
-	public int getLayout(){
+	public int setLayout(){
 		
 		if(checkId == R.id.list_main){
 			return R.layout.project_list_row;
