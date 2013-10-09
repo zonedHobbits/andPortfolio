@@ -11,7 +11,9 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 	
 	private Context context;
 	private Object[] values;
-	private int layoutID;
+	
+	private int checkId;
+	private int setLayout;
 
 	public CustomAdapter(Context context, int resource, Object[] values) {
 		super(context, resource, values);
@@ -19,7 +21,10 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		this.context = context;
 		this.values = values;
 		
-		Log.i("CONTEXT", context.toString());
+		checkId = resource;
+		
+		Log.d("ID ID ID ID", String.valueOf(checkId));
+		
 	}
 	
 	public View getView(int position, View convertView, ViewGroup parent){
@@ -31,7 +36,22 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		
 	}
 	
-	public void setLayout(){
+	public int getLayout(){
+		
+		if(checkId == R.id.list_main){
+			return R.layout.project_list_row;
+		}
+		
+		// Remove comments and fix the if statement when list is added.
+		
+		/*
+		if(checkId == R.id.NAME FOR LIST){
+			return LAYOUT;
+		}
+		*/
+		
+		return 0;
+		
 	}
 
 }

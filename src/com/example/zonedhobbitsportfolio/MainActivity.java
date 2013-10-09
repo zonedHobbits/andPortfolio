@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        test = (ListView) findViewById(R.id.listView1);
+        test = (ListView) findViewById(R.id.list_main);
         
         Person[] arraypersons = new Person[3];
         
