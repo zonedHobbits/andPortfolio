@@ -51,7 +51,7 @@ class FetchJSON {
                         $numProject = 0;
                         while($reg = mysql_fetch_assoc($rsProjects)) {
                                 //add one to the var.
-                                $numProject++;
+                                $numProject++;                     								
                                 //check if we are in a new project.
                                 if($reg[type] == "name") {
                                         //creat an array for one project.
