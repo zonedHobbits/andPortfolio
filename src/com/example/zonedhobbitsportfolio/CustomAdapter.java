@@ -23,8 +23,6 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		
 		checkId = resource;
 		
-		Log.d("ID ID ID ID", String.valueOf(checkId));
-		
 	}
 	
 	public View getView(int position, View convertView, ViewGroup parent){
