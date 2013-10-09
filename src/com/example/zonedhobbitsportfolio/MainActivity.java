@@ -31,8 +31,8 @@ public class MainActivity extends Activity {
         
         test.setAdapter(test1);
         
-        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/JSON.php");
-        
+        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
+        this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
     }
 
     @Override

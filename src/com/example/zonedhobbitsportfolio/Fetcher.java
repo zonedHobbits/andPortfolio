@@ -6,11 +6,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
 public class Fetcher extends AsyncTask<String, Void, String> {
+	//REMEMBER TO ADD INTERNET PERMISION TO MANIFEST
 
 		@Override
 		protected String doInBackground(String... params) {
@@ -43,7 +45,6 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	                conn.disconnect();
 	            }
 	        }
-	        Log.i("JSONResponseCategories", json.toString());
 	        return json.toString();
 		}
 
@@ -51,15 +52,17 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 		protected void onPostExecute(String json) {
 			super.onPostExecute(json);
 			try {
-				putCategory(json);
+				showInfoFromDb(json);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		
-		void putCategory(String json) throws JSONException {
+		void showInfoFromDb(String json) throws JSONException {
 			Log.i("FETCHER", json.toString());
+			JSONObject jObject = new JSONObject(json);
+			//CONTINUE: geting the strings
 		}
     	
     }
