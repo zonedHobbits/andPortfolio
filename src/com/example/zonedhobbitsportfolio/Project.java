@@ -14,16 +14,19 @@ public class Project {
 	
 	String type;
 	
+	Bitmap thumbnail;
+	
 	Bitmap[] shots; //Screenshots, images
 
 	public Project(String name, String tagline, Person creator, String desc,
-			String type, Bitmap[] shots) {
+			String type, Bitmap thumbnail, Bitmap[] shots) {
 		super();
 		this.name = name;
 		this.tagline = tagline;
 		this.creator = creator;
 		this.desc = desc;
 		this.type = type;
+		this.thumbnail = thumbnail;
 		this.shots = shots;
 	}
 
@@ -67,6 +70,14 @@ public class Project {
 		this.type = type;
 	}
 
+	public Bitmap getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(Bitmap thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
 	public Bitmap[] getShots() {
 		return shots;
 	}
@@ -74,5 +85,7 @@ public class Project {
 	public void setShots(Bitmap[] shots) {
 		this.shots = shots;
 	}
+
+	
 	
 }
