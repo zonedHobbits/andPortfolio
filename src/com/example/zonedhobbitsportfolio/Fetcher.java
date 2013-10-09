@@ -19,8 +19,6 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 			
 			String urlString = params[0];
 			
-			
-			
 			HttpURLConnection conn = null;
 	        final StringBuilder json = new StringBuilder();
 	        try {
