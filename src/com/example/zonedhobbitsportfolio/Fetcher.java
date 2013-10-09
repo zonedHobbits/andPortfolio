@@ -1,14 +1,18 @@
 package com.example.zonedhobbitsportfolio;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -94,11 +98,30 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   		}
 	   		
 	   		//Change the url of the images to a bitmap object.
-	   		Bitmap normal_img_bitmap;
-	   		Bitmap fun_img_bitmap;
+	   		Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
+	   		Bitmap fun_img_bitmap = this.grabBitmap(fun_img);
 	   		
-	   		//Creat a person object, send parameters.
-	   		//Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
+	   		//Create a person object, send parameters.
+	   		Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
+		}
+		
+		Bitmap grabBitmap(String URL) {
+			Bitmap bm = null;
+	        try {
+	            URL aURL = new URL(URL.replace("\\", ""));
+	            URLConnection conn = aURL.openConnection();
+	            conn.connect();
+	            InputStream is = conn.getInputStream();
+	            BufferedInputStream bis = new BufferedInputStream(is);
+	            bm = BitmapFactory.decodeStream(bis);
+	            bis.close();
+	            is.close();
+	        } catch (IOException e) {
+	        	Log.e("DB Bitmap Exception", "Error getting bitmap", e);
+	        }
+	       
+	        return bm; 
+	        
 		}
     	
     }
