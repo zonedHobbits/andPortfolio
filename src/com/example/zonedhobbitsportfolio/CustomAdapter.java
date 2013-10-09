@@ -25,10 +25,13 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		
 	}
 	
-	public View getView(int position, View convertView, ViewGroup parent){
+	public View getView(int position, View convertView, ViewGroup parent) {
 		
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(setLayout(), parent, false);
+		
+		// Fill fields
+		fillLayout();
 		
 		return rowView;
 		
@@ -36,19 +39,26 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 	
 	public int setLayout(){
 		
-		if(checkId == R.id.list_main){
+		if(checkId == R.id.list_main) {
+			return R.layout.main_list_row;
+		}
+		else if(checkId == R.id.list_profile) {
 			return R.layout.project_list_row;
 		}
-		
-		// Remove comments and fix the if statement when list is added.
-		
-		/*
-		if(checkId == R.id.NAME FOR LIST){
-			return LAYOUT;
+		else{
+			return 0;
 		}
-		*/
 		
-		return 0;
+	}
+	
+	public void fillLayout(){
+		
+		if(checkId == R.id.list_main) {
+			//FILL FIELDS
+		}
+		else if(checkId == R.id.list_profile) {
+			//FILL FIELDS
+		}
 		
 	}
 
