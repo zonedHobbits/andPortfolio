@@ -3,10 +3,9 @@
 
     <string name="app_name">Zoned Hobbits Portfolio</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_profile">ProfileActivity</string>
     
-    <!--  Graphical Guidelines -->
+    <!--  Graphical Guidelines // Check PSD -->
     
     <color name="body_text">#0f0f0f</color>
     <color name="overlay_text_img">#39474f</color>
