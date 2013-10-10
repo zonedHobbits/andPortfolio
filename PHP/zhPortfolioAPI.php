@@ -53,6 +53,8 @@ class FetchJSON {
 						$nameOfProject;
                          
 						$project = array();
+						                   
+						$int = 0;
 						
 						while($reg = mysql_fetch_assoc($countQuery)) {         
 						
@@ -60,28 +62,29 @@ class FetchJSON {
 
 							//get the projects. $projectsQuery = "SELECT * FROM projects"
                         	$rsProjects = $this -> makeQuery("SELECT * FROM projects WHERE project = '$nameOfProject'");
-                        
+                                                                
+							
 												
 							while($reg = mysql_fetch_assoc($rsProjects)) {
 	                            								
-								$int = 0;
-
                         		if($reg[type] == 'img') {
 								
 	                            
-									$project[$nameOfProject]['img'][]  = $reg[value];
+									$project[$int]['img'][]  = $reg[value];
 									
-									$int++;
+									
 									
 								} else {
                         
-									$project[$nameOfProject][$reg[type]] = $reg[value];
+									$project[$int][$reg[type]] = $reg[value];
                     	   
  								}
-
-								
+                                                 
                                 					
-						}
+						}                        
+						
+						$int++;
+						
 						//print_r($project);
 						$jsonObject["projects"] = $project; 
 												                                   
