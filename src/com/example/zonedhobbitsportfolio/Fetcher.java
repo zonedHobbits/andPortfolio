@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -88,23 +89,29 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   		String url = jObjectContact.getString("url");
 	   		
 	   		//Get the strings in the jObject2.
-	   		JSONObject jObjectProjects = jObject.getJSONObject("projects");
-	   		for(int x=1; x <= jObjectProjects.length(); x++) {
-		   		JSONObject jObjectProjectSingle = jObjectProjects.getJSONObject(Integer.toString(x));
+	   		JSONArray jArrayProjects = jObject.getJSONArray("projects");
+	   		Log.i("ARRAY", jArrayProjects.toString());
+	   		
+	   		for(int x=0; x < jArrayProjects.length(); x++) {
+		   		JSONObject jObjectProjectSingle = jArrayProjects.getJSONObject(x);
+		   		Log.i("***jObjectProjectSingle", jObjectProjectSingle.toString());
 		   		String projectName = jObjectProjectSingle.getString("name");
-		   		String projectTagline = jObjectProjectSingle.getString("tagline");
-	   			String projectDescription = jObjectProjectSingle.getString("description");
-	   			String projectType = jObjectProjectSingle.getString("type");
-	   			//FECTH THE IMAGES WHEN ALBIN IS DONE WITH THE PHP
+		   		//String projectTagline = jObjectProjectSingle.getString("tagline");
+	   			//String projectDescription = jObjectProjectSingle.getString("description");
+	   			//String projectType = jObjectProjectSingle.getString("type");
+	   			Log.i("***projectName", projectName);
+	   			//Log.i("***projectType", projectType);
+	   			//Fetch the images
+	   			
 	   		}
 	   		
 	   		//Change the url of the images to a bitmap object.
-	   		Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
-	   		Bitmap fun_img_bitmap = this.grabBitmap(fun_img);
-	   		Log.i("bitmap", normal_img_bitmap.toString());
+	   		//Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
+	   		//Bitmap fun_img_bitmap = this.grabBitmap(fun_img);
+	   		//Log.i("bitmap", normal_img_bitmap.toString());
 	   		
 	   		//Create a person object, send parameters.
-	   		Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
+	   		//Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
 		}
 		
 		Bitmap grabBitmap(String URL) {

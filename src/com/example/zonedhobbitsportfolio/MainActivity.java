@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
         
         this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
         this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
+        this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
     }
 
 
