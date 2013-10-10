@@ -12,7 +12,7 @@
         android:textColor="@color/divider_text"
         android:textSize="24sp"
         android:gravity="center"
-        android:text="Zoned Hobbits" />
+        android:text="Martin Haiek" />
 
     <ListView
         android:id="@+id/list_profile"

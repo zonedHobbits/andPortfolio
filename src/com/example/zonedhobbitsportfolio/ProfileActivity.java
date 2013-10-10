@@ -15,7 +15,7 @@ public class ProfileActivity extends Activity {
 		
 		//Test fonts
         
-        TextView myTextView=(TextView)findViewById(R.id.text_header_main);
+        TextView myTextView=(TextView)findViewById(R.id.text_header_profile);
         Typeface typeFace=Typeface.createFromAsset(getAssets(),"fonts/Edmondsans-Bold.otf");
         myTextView.setTypeface(typeFace);
         
