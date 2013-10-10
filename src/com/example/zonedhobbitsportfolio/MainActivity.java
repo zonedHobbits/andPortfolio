@@ -26,13 +26,15 @@ public class MainActivity extends Activity {
         
         test = (ListView) findViewById(R.id.list_main);
         
+        test.setScrollContainer(false);
+        
         Person[] arraypersons = new Person[3];
         
         // Just for test purposes
         
-        //arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null);
-        //arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null);
-        //arraypersons[2] = new Person("Martin", null, null, null, null, null, null, null);
+        arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null, null, null, null, null);
+        arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null, null, null, null, null);
+        arraypersons[2] = new Person("Martin", null, null, null, null, null, null, null, null, null, null, null);
         
         CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);
         
@@ -45,9 +47,14 @@ public class MainActivity extends Activity {
         
         Log.i("***HEIGHT", String.valueOf(height));
         
+<<<<<<< HEAD
         this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
         this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
         this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
+=======
+        //this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
+        //this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
+>>>>>>> 39f272557d5347578aeba144c9baa33293ccb1c3
     }
 
 
