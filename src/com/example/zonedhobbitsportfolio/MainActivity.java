@@ -46,15 +46,12 @@ public class MainActivity extends Activity {
         int width = displaymetrics.widthPixels;
         
         Log.i("***HEIGHT", String.valueOf(height));
-        
-<<<<<<< HEAD
+
+
         this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
         this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
         this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
-=======
-        //this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
-        //this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
->>>>>>> 39f272557d5347578aeba144c9baa33293ccb1c3
+
     }
 
 
