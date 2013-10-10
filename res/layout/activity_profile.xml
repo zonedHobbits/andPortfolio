@@ -13,12 +13,50 @@
         android:textSize="24sp"
         android:gravity="center"
         android:text="Martin Haiek" />
+    
+    <ImageView
+        android:id="@+id/image_fun_profile"
+        android:layout_width="match_parent"
+        android:layout_height="173dp"
+        android:layout_below="@+id/text_header_profile"
+        android:src="@drawable/ic_launcher" />
 
-    <ListView
-        android:id="@+id/list_profile"
+    <TextView
+        android:id="@+id/text_desc_profile"
+        android:layout_width="match_parent"
+        android:padding="34dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_fun_profile"
+        android:text="Description" />
+    
+    <TextView
+        android:id="@+id/text_socialheader_profile"
         android:layout_width="384dp"
-        android:layout_height="519dp"
-        android:layout_below="@+id/text_header_profile" >
-    </ListView>
+        android:layout_height="48dp"
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_below="@+id/text_desc_profile"
+        android:text="Getting in touch" />
+    
+    <TextView
+        android:id="@+id/text_social_profile"
+        android:layout_width="match_parent"
+        android:padding="34dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_socialheader_profile"
+        android:text="Contact Info" />
+    
+    <TextView
+        android:id="@+id/text_projectheader_profile"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_below="@+id/text_social_profile"
+        android:text="Selected work" />
 
 </RelativeLayout>
