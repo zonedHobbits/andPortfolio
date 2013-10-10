@@ -15,26 +15,28 @@
         android:text="Martin Haiek" />
     
     <FrameLayout 
-          android:layout_width="match_parent" 
-          android:layout_height="173dp" 
-          android:background="#D6FFD6"
-          android:id="@+id/image_fun_profile">
-         <ImageView 
-             		 android:src="@drawable/ic_launcher"
-                     android:scaleType="fitCenter"
-                     android:layout_height="match_parent"
-                     android:layout_width="match_parent"/>
-         <TextView
-                      android:text="ARAGORN WHAT ARE YOU DOING?"
-                      android:textSize="30sp"
-                      android:textStyle="bold"
-                      android:textColor="#003399"
-                      android:layout_height="match_parent"
-                      android:layout_width="match_parent"
-                      android:gravity="right"/>
+        android:layout_width="match_parent" 
+        android:layout_height="173dp" 
+        android:background="#D6FFD6"
+        android:id="@+id/image_funwrapper_profile">
+        
+        <ImageView 
+			android:src="@drawable/ic_launcher"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:id="@+id/image_funimg_profile"
+            android:layout_width="match_parent"/>
+        
+        <TextView
+			android:text="ARAGORN WHAT ARE YOU DOING?"
+			android:textSize="30sp"
+			android:textStyle="bold"
+            android:textColor="#003399"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:gravity="right"/>
+        
 	</FrameLayout>
-    
-
 
     <TextView
         android:id="@+id/text_desc_profile"
@@ -42,7 +44,7 @@
         android:background="@color/divider_text"
         android:padding="34dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/image_fun_profile"
+        android:layout_below="@+id/image_funwrapper_profile"
         android:text="Description" />
     
     <TextView
