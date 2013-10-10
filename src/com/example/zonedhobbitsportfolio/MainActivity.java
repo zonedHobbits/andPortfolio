@@ -32,9 +32,9 @@ public class MainActivity extends Activity {
         
         // Just for test purposes
         
-        arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null, null, null, null, null);
-        arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null, null, null, null, null);
-        arraypersons[2] = new Person("Martin", null, null, null, null, null, null, null, null, null, null, null);
+        //arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null, null, null, null, null);
+        //arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null, null, null, null, null);
+        //arraypersons[2] = new Person("Martin", null, null, null, null, null, null, null, null, null, null, null);
         
         CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);
         
@@ -47,10 +47,10 @@ public class MainActivity extends Activity {
         
         Log.i("***HEIGHT", String.valueOf(height));
 
-
-        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
-        this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
-        this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
+        Person martin = null;
+        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php", martin);
+        //this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
+        //this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
 
     }
 
@@ -62,8 +62,8 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void setUpInfo(String url) {
-    	new Fetcher().execute(url);
+    public void setUpInfo(String url, Person name) {
+    	new Fetcher(name).execute(url);
     }
     
 }

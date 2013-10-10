@@ -22,7 +22,12 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 		
 		//Creating an project array for sending as a parameter when creating a person object.
 		Project[] projects;
-	
+		Person user;
+		
+		public Fetcher (Person name) {
+			this.user = name;
+		}
+		
 		@Override
 		protected String doInBackground(String... params) {
 			
@@ -92,26 +97,48 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   		JSONArray jArrayProjects = jObject.getJSONArray("projects");
 	   		Log.i("ARRAY", jArrayProjects.toString());
 	   		
+	   		//Change the url of the images to a bitmap object.
+	   		Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
+	   		Bitmap fun_img_bitmap = this.grabBitmap(fun_img);
+	   		//Log.i("bitmap", normal_img_bitmap.toString());
+	   		
+	   		//Create a person object, send parameters.
+	   		user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
+	   		
 	   		for(int x=0; x < jArrayProjects.length(); x++) {
 		   		JSONObject jObjectProjectSingle = jArrayProjects.getJSONObject(x);
 		   		Log.i("***jObjectProjectSingle", jObjectProjectSingle.toString());
 		   		String projectName = jObjectProjectSingle.getString("name");
-		   		//String projectTagline = jObjectProjectSingle.getString("tagline");
-	   			//String projectDescription = jObjectProjectSingle.getString("description");
-	   			//String projectType = jObjectProjectSingle.getString("type");
-	   			Log.i("***projectName", projectName);
-	   			//Log.i("***projectType", projectType);
+		   		String projectTagline = jObjectProjectSingle.getString("tagline");
+	   			String projectDescription = jObjectProjectSingle.getString("description");
+	   			String projectType = jObjectProjectSingle.getString("type");
+	   			String projectThumbnail = jObjectProjectSingle.getString("thumbnail");
+	   			//Creating a bitmap object from the projectThumbnail URL.
+	   			Bitmap projectThumbnailBitmap = this.grabBitmap(projectThumbnail);
+	   			//Log.i("***projectName", projectName);
+	   			
 	   			//Fetch the images
+	   			JSONObject jObjectProjectImages = jObjectProjectSingle.getJSONObject("img");
+	   			
+	   			//Get how many images does the project has.
+	   			int imgLenght = jObjectProjectImages.length();
+	   			
+	   			//Creat a Bitmap array;
+	   			Bitmap[] bitmapArray = new Bitmap[imgLenght];
+	   			
+	   			//Loop the jObjectProjectImages objects and get all the URL.
+	   			for(int v=1; v <= imgLenght; v++) {
+	   				//Log.i("***jObjectProjectImages", jObjectProjectImages.toString());
+	   				String imageUrl = jObjectProjectImages.getString(Integer.toString(v));
+	   				//Convert the URL string in a bitmap object and add it to bitmapArray.
+	   				bitmapArray[v] = this.grabBitmap(imageUrl);
+	   			}
+	   			
+	   			//Creat a project object and pass parameters.
+	   			Project projectObject = new Project(projectName, projectTagline, user, projectType, projectDescription, projectThumbnailBitmap, bitmapArray);
 	   			
 	   		}
 	   		
-	   		//Change the url of the images to a bitmap object.
-	   		//Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
-	   		//Bitmap fun_img_bitmap = this.grabBitmap(fun_img);
-	   		//Log.i("bitmap", normal_img_bitmap.toString());
-	   		
-	   		//Create a person object, send parameters.
-	   		//Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
 		}
 		
 		Bitmap grabBitmap(String URL) {
