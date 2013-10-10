@@ -4,13 +4,21 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity" >
 
+    <TextView
+        android:id="@+id/text_header_profile"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:text="Zoned Hobbits" />
+
     <ListView
         android:id="@+id/list_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
-
+        android:layout_width="384dp"
+        android:layout_height="519dp"
+        android:layout_below="@+id/text_header_profile" >
     </ListView>
 
 </RelativeLayout>
