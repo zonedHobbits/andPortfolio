@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -14,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
@@ -46,7 +48,12 @@ public class MainActivity extends Activity {
         int width = displaymetrics.widthPixels;
         
         Log.i("***HEIGHT", String.valueOf(height));
-
+        
+        //Test fonts
+        
+        TextView myTextView=(TextView)findViewById(R.id.text_header_main);
+        Typeface typeFace=Typeface.createFromAsset(getAssets(),"fonts/Edmondsans-Bold.otf");
+        myTextView.setTypeface(typeFace);
 
         this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
         this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
