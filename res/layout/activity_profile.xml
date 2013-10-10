@@ -34,6 +34,7 @@
 			android:textStyle="bold"
             android:textColor="#003399"
             android:layout_height="match_parent"
+            android:id="@+id/image_funtext_profile"
             android:layout_width="match_parent"
             android:gravity="right"/>
         
