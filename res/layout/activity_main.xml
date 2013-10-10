@@ -10,7 +10,7 @@
         android:layout_height="48dp"
         android:background="@color/divider_bg"
         android:textColor="@color/divider_text"
-        android:textStyle="bold"
+        android:textSize="24sp"
         android:gravity="center"
         android:text="Zoned Hobbits" />
 

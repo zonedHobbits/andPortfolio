@@ -4,13 +4,80 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity" >
 
-    <ListView
-        android:id="@+id/list_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+    <TextView
+        android:id="@+id/text_header_profile"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:text="Martin Haiek" />
+    
+    <FrameLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="173dp" 
+        android:background="#D6FFD6"
+        android:id="@+id/image_funwrapper_profile"
+        android:layout_below="@+id/text_header_profile">
+        
+        <ImageView 
+			android:src="@drawable/ic_launcher"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:id="@+id/image_funimg_profile"
+            android:layout_width="match_parent"/>
+        
+        <TextView
+			android:text="ARAGORN WHAT ARE YOU DOING?"
+			android:textSize="30sp"
+			android:textStyle="bold"
+            android:textColor="#003399"
+            android:layout_height="match_parent"
+            android:id="@+id/image_funtext_profile"
+            android:layout_width="match_parent"
+            android:gravity="right"/>
+        
+	</FrameLayout>
 
-    </ListView>
+    <TextView
+        android:id="@+id/text_desc_profile"
+        android:layout_width="match_parent"
+        android:background="@color/divider_text"
+        android:padding="34dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_funwrapper_profile"
+        android:text="Description" />
+    
+    <TextView
+        android:id="@+id/text_socialheader_profile"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_below="@+id/text_desc_profile"
+        android:text="Getting in touch" />
+    
+    <TextView
+        android:id="@+id/text_social_profile"
+        android:layout_width="match_parent"
+        android:background="@color/divider_text"
+        android:padding="34dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_socialheader_profile"
+        android:text="Contact Info" />
+    
+    <TextView
+        android:id="@+id/text_projectheader_profile"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_below="@+id/text_social_profile"
+        android:text="Selected work" />
 
 </RelativeLayout>

@@ -43,13 +43,15 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		if(checkId == R.id.list_main) {
 			return R.layout.main_list_row;
 		}
-		else if(checkId == R.id.list_profile) {
+		/*else if(checkId == R.id.list_profile) {
 			return R.layout.project_list_row;
 		}
 		else{
-			return 0;
+			
 		}
+		*/
 		
+		return 0;
 	}
 	
 	public void fillLayout(){
@@ -58,9 +60,11 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			//FILL FIELDS
 			
 		}
+		/*
 		else if(checkId == R.id.list_profile) {
 			//FILL FIELDS
 		}
+		*/
 		
 	}
 
