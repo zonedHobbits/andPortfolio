@@ -44,13 +44,6 @@ public class MainActivity extends Activity {
         
         test.setAdapter(test1);
         
-        DisplayMetrics displaymetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int height = displaymetrics.heightPixels;
-        int width = displaymetrics.widthPixels;
-        
-        Log.i("***HEIGHT", String.valueOf(height));
-        
         //Test fonts
         
         TextView myTextView=(TextView)findViewById(R.id.text_header_main);
@@ -76,10 +69,12 @@ public class MainActivity extends Activity {
     }
     
     public void moveToProfile(View v){
+    	
     	Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
         
         //We need to pass through some kind of data to know which profile clicked.
+    
     }
     
 }
