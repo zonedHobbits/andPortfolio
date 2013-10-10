@@ -1,14 +1,22 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:background="#000000"
+        android:text="TextView" />
+
     <ListView
         android:id="@+id/list_main"
-        android:layout_width="fill_parent"
-        android:layout_height="519dp" >
+        android:layout_width="384dp"
+        android:layout_height="519dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1" >
     </ListView>
     
-    
-</LinearLayout>
+</RelativeLayout>
