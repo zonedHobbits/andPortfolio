@@ -50,49 +50,47 @@ class FetchJSON {
 
                         $countQuery = $this -> makeQuery("SELECT DISTINCT project AS project FROM projects");                                                      
 
-						$nameOfProject;
+                        $nameOfProject;
                          
-						$project = array();
-						                   
-						$int = 0;
-						
-						while($reg = mysql_fetch_assoc($countQuery)) {         
-						
-							$nameOfProject = $reg[project];                
+                        $project = array();
 
-							//get the projects. $projectsQuery = "SELECT * FROM projects"
-                        	$rsProjects = $this -> makeQuery("SELECT * FROM projects WHERE project = '$nameOfProject'");
-                                                                
-							
-												
-							while($reg = mysql_fetch_assoc($rsProjects)) {
-	                            								
-                        		if($reg[type] == 'img') {
-								
-	                            
-									$project[$int]['img'][]  = $reg[value];
-									
-									
-									
-								} else {
+                        $int = 0;
                         
-									$project[$int][$reg[type]] = $reg[value];
-                    	   
- 								}
-                                                 
-                                					
-						}                        
-						
-						$int++;
-						
-						//print_r($project);
-						$jsonObject["projects"] = $project; 
-												                                   
-				}		                        
-                return $jsonObject;
-        }
+                        while($reg = mysql_fetch_assoc($countQuery)) {         
+                        
+                            $nameOfProject = $reg[project];   
 
-	}
+                            $imgNum = 1;             
+
+                            //get the projects. $projectsQuery = "SELECT * FROM projects"
+                            $rsProjects = $this -> makeQuery("SELECT * FROM projects WHERE project = '$nameOfProject'");
+
+                            while($reg = mysql_fetch_assoc($rsProjects)) {  
+                    
+
+                                if($reg[type] == 'img') {
+                                
+                                    $project[$int]['img'][$imgNum]  = $reg[value];
+                                    $imgNum ++;
+                                    
+                                } else {
+                        
+                                    $project[$int][$reg[type]] = $reg[value];
+                           
+                                }
+                                                    
+                            }
+
+                            $int++;
+
+                            //print_r($project);
+                            $jsonObject["projects"] = $project; 
+                                                                                   
+                        }                               
+                return $jsonObject;
+            }
+
+        }
 
     public function JSONencode($toSend) {
                 $jsonArray = json_encode($toSend);
@@ -101,7 +99,7 @@ class FetchJSON {
 
 }
 
-$martin = new FetchJSON("host", "user", "pw", "db");
+$martin = new FetchJSON("host", "user", "pass", "db");
 $rs = $martin -> makeQuery("SELECT * FROM userInfo");
 $jsonObject = $martin -> creatArray($rs, "SELECT * FROM projects");
 echo $martin -> JSONencode($jsonObject);

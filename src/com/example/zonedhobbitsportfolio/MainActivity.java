@@ -47,10 +47,10 @@ public class MainActivity extends Activity {
         
         Log.i("***HEIGHT", String.valueOf(height));
 
-
-        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
-        this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
-        this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
+        Person martin = null;
+        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php", martin);
+        //this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
+        //this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
 
     }
 
@@ -62,8 +62,8 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void setUpInfo(String url) {
-    	new Fetcher().execute(url);
+    public void setUpInfo(String url, Person user) {
+    	new Fetcher(user).execute(url);
     }
     
 }
