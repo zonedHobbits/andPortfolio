@@ -5,19 +5,20 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/text_header_main"
         android:layout_width="384dp"
         android:layout_height="48dp"
-        android:background="#000000"
-        android:text="TextView" />
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Zoned Hobbits" />
 
     <ListView
         android:id="@+id/list_main"
         android:layout_width="384dp"
         android:layout_height="519dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:scrollbars="none" >
+        android:layout_below="@+id/text_header_main" >
     </ListView>
     
 </RelativeLayout>
