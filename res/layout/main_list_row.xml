@@ -25,8 +25,7 @@
         android:layout_marginRight="34dp"
         android:layout_below="@+id/name"
         android:textSize="15sp"
-        android:textColor="@color/overlay_text_img"
-        android: />
+        android:textColor="@color/overlay_text_img" />
     
     <ImageView
         android:id="@+id/imageView"
