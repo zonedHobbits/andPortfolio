@@ -34,12 +34,12 @@ class FetchJSON {
         public function creatArray($rs, $projectsQuery) {
                 $jsonObject = array();
                 while($reg = mysql_fetch_assoc($rs)) {
-                        $jsonObject["name"] = $reg[name];
-                        $jsonObject["nick_name"] = $reg[nick_name];
+                        $jsonObject["name"] = utf8_encode($reg[name]);
+                        $jsonObject["nick_name"] = utf8_encode($reg[nick_name]);
                         $jsonObject["normal_img"] = $reg[normal_img];
                         $jsonObject["fun_img"] = $reg[fun_img];
-                        $jsonObject["quote"] = $reg[quote];
-                        $jsonObject["bio"] = $reg[bio];
+                        $jsonObject["quote"] = utf8_encode($reg[quote]);
+                        $jsonObject["bio"] = utf8_encode($reg[bio]);
                         $jsonObject["contact"]["email"] = $reg[email];
                         $jsonObject["contact"]["twitter"] = $reg[twitter];
                         $jsonObject["contact"]["github"] = $reg[github];
@@ -98,7 +98,7 @@ class FetchJSON {
 
 }
 
-$martin = new FetchJSON("server", "user", "pw", "db");
+$martin = new FetchJSON("host", "user", "pw", "db");
 $rs = $martin -> makeQuery("SELECT * FROM userInfo");
 $jsonObject = $martin -> creatArray($rs, "SELECT * FROM projects");
 echo $martin -> JSONencode($jsonObject);
