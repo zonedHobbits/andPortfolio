@@ -16,7 +16,8 @@
         android:layout_width="384dp"
         android:layout_height="519dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1" >
+        android:layout_below="@+id/textView1"
+        android:scrollbars="none" >
     </ListView>
     
 </RelativeLayout>
