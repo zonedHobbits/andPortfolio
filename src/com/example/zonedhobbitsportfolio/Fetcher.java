@@ -60,6 +60,7 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 		protected void onPostExecute(String json) {
 			super.onPostExecute(json);
 			try {
+				//Do something when the JSON is recovered from php file.
 				showInfoFromDb(json);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
@@ -100,6 +101,7 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   		//Change the url of the images to a bitmap object.
 	   		Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
 	   		Bitmap fun_img_bitmap = this.grabBitmap(fun_img);
+	   		Log.i("bitmap", normal_img_bitmap.toString());
 	   		
 	   		//Create a person object, send parameters.
 	   		Person user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
