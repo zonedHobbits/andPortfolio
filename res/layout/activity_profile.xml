@@ -18,7 +18,8 @@
         android:layout_width="match_parent" 
         android:layout_height="173dp" 
         android:background="#D6FFD6"
-        android:id="@+id/image_funwrapper_profile">
+        android:id="@+id/image_funwrapper_profile"
+        android:layout_below="@+id/text_header_profile">
         
         <ImageView 
 			android:src="@drawable/ic_launcher"
