@@ -26,6 +26,8 @@ public class MainActivity extends Activity {
         
         test = (ListView) findViewById(R.id.list_main);
         
+        test.setScrollContainer(false);
+        
         Person[] arraypersons = new Person[3];
         
         // Just for test purposes
