@@ -76,17 +76,5 @@ public class MainActivity extends Activity {
     		
     	}
     }
-       
-    // Disable scroll on MainActivity
-    @Override
-    public final boolean dispatchTouchEvent(final MotionEvent ev) {
-      if (ev.getAction() == MotionEvent.ACTION_MOVE) {
-        ev.setAction(MotionEvent.ACTION_CANCEL);
-      }
-      
-      super.dispatchTouchEvent(ev);
-      return true;
-      
-    }
     
 }
