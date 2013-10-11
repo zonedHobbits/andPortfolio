@@ -12,6 +12,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.WindowManager;
@@ -74,6 +75,18 @@ public class MainActivity extends Activity {
             test.setAdapter(test1);
     		
     	}
+    }
+       
+    // Disable scroll on MainActivity
+    @Override
+    public final boolean dispatchTouchEvent(final MotionEvent ev) {
+      if (ev.getAction() == MotionEvent.ACTION_MOVE) {
+        ev.setAction(MotionEvent.ACTION_CANCEL);
+      }
+      
+      super.dispatchTouchEvent(ev);
+      return true;
+      
     }
     
 }

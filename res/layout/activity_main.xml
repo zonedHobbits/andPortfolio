@@ -1,37 +1,29 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:overScrollMode="never" 
     android:layout_height="match_parent"
-    android:scrollbars="none"
-    tools:context=".MainActivity"
-    android:fillViewport="true">
+    android:overScrollMode="never"
+    android:padding="0dp"
+    android:layout_margin="0dp"
+    tools:context=".MainActivity" >
 
-	<RelativeLayout 
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:orientation="vertical"
-	     >
-	
-	    <TextView
-	        android:id="@+id/text_header_main"
-	        android:layout_width="384dp"
-	        android:layout_height="48dp"
-	        android:background="@color/divider_bg"
-	        android:textColor="@color/divider_text"
-	        android:textSize="24sp"
-	        android:gravity="center"
-	        android:text="Zoned Hobbits" />
-	
-	    <ListView
-	        android:id="@+id/list_main"
-	        android:layout_width="match_parent"
-	        android:layout_height="519dp"
-	        android:padding="0dp"
-	    	android:layout_margin="0dp"
-	        android:layout_below="@+id/text_header_main" >
-	    </ListView>
-	    
-	</RelativeLayout>
-	
-</ScrollView>
+    <TextView
+        android:id="@+id/text_header_main"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:background="@color/divider_bg"
+        android:textColor="@color/divider_text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:text="Zoned Hobbits" />
+
+    <ListView
+        android:id="@+id/list_main"
+        android:layout_width="match_parent"
+        android:layout_height="519dp"
+        android:padding="0dp"
+    	android:layout_margin="0dp"
+        android:layout_below="@+id/text_header_main" >
+    </ListView>
+    
+</RelativeLayout>
