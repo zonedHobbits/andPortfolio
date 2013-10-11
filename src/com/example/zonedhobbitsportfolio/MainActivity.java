@@ -7,6 +7,7 @@ import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -19,11 +20,15 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
 	ListView test;
+	TextView header_main;
+	
 	Person[] arraypersons = new Person[3];
+	
 	int i = 0;
 
     @Override
@@ -33,16 +38,16 @@ public class MainActivity extends Activity {
         
         test = (ListView) findViewById(R.id.list_main);
         
-        test.setScrollContainer(false);
-        
-        
-        // Just for test purposes
+        header_main = (TextView) findViewById(R.id.text_header_main);
 
         //Fetch the info from the server and add it to the person object created before.
 
         setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
 		setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
         setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
+        
+        Typeface font = Typeface.createFromAsset(this.getAssets(),"fonts/Edmondsans-Bold.otf");
+        header_main.setTypeface(font);
         
     }
 
