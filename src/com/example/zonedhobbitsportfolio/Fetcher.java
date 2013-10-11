@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,7 +18,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class Fetcher extends AsyncTask<String, Void, String> {
+public class Fetcher extends AsyncTask<String, Void, Person> {
 	//REMEMBER TO ADD INTERNET PERMISION TO MANIFEST
 		
 		//Creating an project array for sending as a parameter when creating a person object.
@@ -29,7 +30,7 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 		}
 		
 		@Override
-		protected String doInBackground(String... params) {
+		protected Person doInBackground(String... params) {
 			
 			String urlString = params[0];
 			
@@ -59,22 +60,25 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	                conn.disconnect();
 	            }
 	        }
-	        return json.toString();
-		}
-
-		@Override
-		protected void onPostExecute(String json) {
-			super.onPostExecute(json);
+	        
+	        String jsonString = json.toString();
+	        
 			try {
-				//Do something when the JSON is recovered from php file.
-				showInfoFromDb(json);
+				Person user = showInfoFromDb(jsonString);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return user;
+		}
+
+		@Override
+		protected void onPostExecute(Person user) {
+			super.onPostExecute(user);
+			
 		}
 		
-		void showInfoFromDb(String json) throws JSONException {
+		Person showInfoFromDb(String json) throws JSONException {
 			Log.i("FETCHER", json.toString());
 			//look for the general JSON object
 			JSONObject jObject = new JSONObject(json);
@@ -100,7 +104,7 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   		//Change the url of the images to a bitmap object.
 	   		Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
 	   		Bitmap fun_img_bitmap = this.grabBitmap(fun_img);
-	   		//Log.i("bitmap", normal_img_bitmap.toString());
+	   		Log.i("bitmap", normal_img_bitmap.toString());
 	   		
 	   		//Create a person object, send parameters.
 	   		user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
@@ -115,7 +119,7 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   			String projectThumbnail = jObjectProjectSingle.getString("thumbnail");
 	   			//Creating a bitmap object from the projectThumbnail URL.
 	   			Bitmap projectThumbnailBitmap = this.grabBitmap(projectThumbnail);
-	   			//Log.i("***projectName", projectName);
+	   			Log.i("bitmapProject", projectThumbnailBitmap.toString());
 	   			
 	   			//Fetch the images
 	   			JSONObject jObjectProjectImages = jObjectProjectSingle.getJSONObject("img");
@@ -123,8 +127,9 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   			//Get how many images does the project has.
 	   			int imgLenght = jObjectProjectImages.length();
 	   			
-	   			//Creat a Bitmap array;
-	   			Bitmap[] bitmapArray = new Bitmap[imgLenght];
+	   			
+	   			//Create a Bitmap array;
+	   			Bitmap[] bitmapArray = new Bitmap[imgLenght +1];
 	   			
 	   			//Loop the jObjectProjectImages objects and get all the URL.
 	   			for(int v=1; v <= imgLenght; v++) {
@@ -139,8 +144,10 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	   			
 	   		}
 	   		
+	   		return user;
 		}
 		
+		//This method has to be call in the doInBackground method
 		Bitmap grabBitmap(String URL) {
 			Bitmap bm = null;
 	        try {
@@ -156,7 +163,7 @@ public class Fetcher extends AsyncTask<String, Void, String> {
 	        	Log.e("DB Bitmap Exception", "Error getting bitmap", e);
 	        }
 	       
-	        return bm; 
+	        return bm;
 	        
 		}
     	
