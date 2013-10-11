@@ -9,30 +9,30 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/text_header_project"
-        android:layout_width="384dp"
-        android:layout_height="48dp"
-        android:background="@color/divider_bg"
-        android:textColor="@color/divider_text"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:text="Memorandom" />
-    
-    <TextView
-        android:id="@+id/text_desc_profile"
-        android:layout_width="match_parent"
-        android:background="@color/divider_text"
-        android:padding="34dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_header_project"
-        android:text="Description" />
-
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_desc_profile" />
+	    <TextView
+	        android:id="@+id/text_header_project"
+	        android:layout_width="384dp"
+	        android:layout_height="48dp"
+	        android:background="@color/divider_bg"
+	        android:textColor="@color/divider_text"
+	        android:textSize="24sp"
+	        android:gravity="center"
+	        android:text="Memorandom" />
+	    
+	    <TextView
+	        android:id="@+id/text_desc_profile"
+	        android:layout_width="match_parent"
+	        android:background="@color/divider_text"
+	        android:padding="34dp"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/text_header_project"
+	        android:text="Description" />
+	
+	    <ListView
+	        android:id="@+id/listView1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/text_desc_profile" />
 
     </RelativeLayout>
     
