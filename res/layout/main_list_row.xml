@@ -36,6 +36,7 @@
 	        android:layout_below="@+id/name"
 	        android:text="TextView"
 	        android:textColor="@color/overlay_text_img"
+	        android:background="@drawable/border"
 	        android:textSize="15sp" />
     
     </RelativeLayout>

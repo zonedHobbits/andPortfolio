@@ -17,7 +17,7 @@
 
     <ListView
         android:id="@+id/list_main"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="519dp"
         android:layout_below="@+id/text_header_main" >
     </ListView>
