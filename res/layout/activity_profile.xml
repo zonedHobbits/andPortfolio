@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
     tools:context=".ProfileActivity" >
     
     <RelativeLayout
@@ -72,7 +74,7 @@
 	        android:padding="34dp"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/text_socialheader_profile"
-	        android:text="Contact Info" />
+	        android:text="Contact Info\n testset\n\n eststet \n wefwefwef\n\n \n\n \n\n \n\n \n\n " />
 	    
 	    <TextView
 	        android:id="@+id/text_projectheader_profile"
