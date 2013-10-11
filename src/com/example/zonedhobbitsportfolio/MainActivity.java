@@ -3,12 +3,14 @@ package com.example.zonedhobbitsportfolio;
 import android.os.Bundle;
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
+import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -64,6 +66,11 @@ public class MainActivity extends Activity {
     
     public void setUpInfo(String url, Person user) {
     	new Fetcher(user).execute(url);
+    }
+    
+    public void moveToProfile(View v){
+    	Intent i = new Intent(this, ProfileActivity.class);
+    	startActivity(i); 
     }
     
 }
