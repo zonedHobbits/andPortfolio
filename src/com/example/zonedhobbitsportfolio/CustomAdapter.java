@@ -67,7 +67,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			TextView nickName = (TextView) rowView.findViewById(R.id.nickName);
 			
 			normalImg.setImageBitmap(((Person) rowItem).getNormal_img());
-			name.setText(((Person) rowItem).getName());
+			name.setText(((Person) rowItem).getName().replaceFirst(" ", "\n"));
 			nickName.setText(((Person) rowItem).getNickName());
 			
 						
