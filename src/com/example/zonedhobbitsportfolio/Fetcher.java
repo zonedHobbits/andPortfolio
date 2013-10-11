@@ -25,8 +25,10 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 		Project[] projects;
 		Person user;
 		
-		public Fetcher (Person name) {
-			this.user = name;
+		MainActivity myActivity;
+		
+		public Fetcher (MainActivity act) {
+			this.myActivity = act;
 		}
 		
 		@Override
@@ -76,6 +78,7 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 		protected void onPostExecute(Person user) {
 			super.onPostExecute(user);
 			
+			myActivity.makeMainList(user);
 		}
 		
 		Person showInfoFromDb(String json) throws JSONException {
@@ -108,6 +111,8 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	   		
 	   		//Create a person object, send parameters.
 	   		user = new Person(name, quote, nick_name, bio, normal_img_bitmap, fun_img_bitmap, email, phone, twitter, url, github, projects);
+	   		//String test = user.getGithub();
+	        //Log.i("***test", test);
 	   		
 	   		for(int x=0; x < jArrayProjects.length(); x++) {
 		   		JSONObject jObjectProjectSingle = jArrayProjects.getJSONObject(x);

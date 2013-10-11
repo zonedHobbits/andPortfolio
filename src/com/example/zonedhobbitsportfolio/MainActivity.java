@@ -1,5 +1,7 @@
 package com.example.zonedhobbitsportfolio;
 
+import java.util.concurrent.ExecutionException;
+
 import android.os.Bundle;
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
@@ -20,6 +22,8 @@ import android.widget.ListView;
 public class MainActivity extends Activity {
 	
 	ListView test;
+	Person[] arraypersons = new Person[3];
+	int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,30 +34,17 @@ public class MainActivity extends Activity {
         
         test.setScrollContainer(false);
         
-        Person[] arraypersons = new Person[3];
         
         // Just for test purposes
+
+        //Fetch the info from the server and add it to the person object created before.
+
+        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
+		this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
+        this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
         
-        arraypersons[0] = new Person("Albin", null, null, null, null, null, null, null, null, null, null, null);
-        arraypersons[1] = new Person("Fredrik", null, null, null, null, null, null, null, null, null, null, null);
-        arraypersons[2] = new Person("Martin", null, null, null, null, null, null, null, null, null, null, null);
-        
-        CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);
-        
+        CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);  
         test.setAdapter(test1);
-        
-        DisplayMetrics displaymetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int height = displaymetrics.heightPixels;
-        int width = displaymetrics.widthPixels;
-        
-        Log.i("***HEIGHT", String.valueOf(height));
-
-        Person martin = null;
-        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php", martin);
-        //this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
-        //this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
-
     }
 
 
@@ -64,13 +55,19 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void setUpInfo(String url, Person user) {
-    	new Fetcher(user).execute(url);
+    public void setUpInfo(String url) {
+    	Fetcher garcon = new Fetcher(this);
+    	garcon.execute(url);
     }
     
     public void moveToProfile(View v){
     	Intent i = new Intent(this, ProfileActivity.class);
     	startActivity(i); 
+    }
+    
+    public void makeMainList(Person person) {
+    	arraypersons[i] = person;
+    	i++;
     }
     
 }
