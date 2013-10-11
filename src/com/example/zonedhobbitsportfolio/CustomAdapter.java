@@ -13,7 +13,6 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 	
 	private Context context;
 	private Object[] values;
-	private int Iterator;
 	
 	private int checkId;
 	private int setLayout;
@@ -30,24 +29,17 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 	
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
+		Object rowItem = getItem(position);
+		
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(setLayout(), parent, false);
 		
-		Log.i("*****VALUES****", values.toString());
 		// Fill fields
-		fillLayout(rowView);
-		
-		if(Integer.toString(Iterator) == null) {
-			Iterator = 0;
-		}
-		if(Iterator <= (values.length - 2)) {
-			Iterator++;
-		}
+		fillLayout(rowView, rowItem);
 		
 		return rowView;
 		
 	}
-	
 	
 	public int setLayout(){
 		
@@ -65,7 +57,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		return 0;
 	}
 	
-	public void fillLayout(View rowView){
+	public void fillLayout(View rowView, Object rowItem){
 		
 		if(checkId == R.id.list_main) {
 			//FILL FIELDS
@@ -74,7 +66,10 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			TextView name = (TextView) rowView.findViewById(R.id.name);
 			TextView nickName = (TextView) rowView.findViewById(R.id.nickName);
 			
-			name.setText(((Person) values[Iterator]).getName());
+			normalImg.setImageBitmap(((Person) rowItem).getNormal_img());
+			name.setText(((Person) rowItem).getName());
+			nickName.setText(((Person) rowItem).getNickName());
+			
 						
 			//normalImg.setImageBitmap(values[0]);
 
