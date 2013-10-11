@@ -39,12 +39,10 @@ public class MainActivity extends Activity {
 
         //Fetch the info from the server and add it to the person object created before.
 
-        this.setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
-		this.setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
-        this.setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
+        setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
+		setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
+        setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
         
-        CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);  
-        test.setAdapter(test1);
     }
 
 
@@ -66,8 +64,16 @@ public class MainActivity extends Activity {
     }
     
     public void makeMainList(Person person) {
+    	Log.i("PERSON", person.toString());
     	arraypersons[i] = person;
     	i++;
+    	
+    	if(i == 3){
+    		
+    		CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);  
+            test.setAdapter(test1);
+    		
+    	}
     }
     
 }

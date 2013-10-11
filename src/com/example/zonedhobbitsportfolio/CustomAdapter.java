@@ -33,6 +33,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(setLayout(), parent, false);
 		
+		Log.i("*****VALUES****", values.toString());
 		// Fill fields
 		fillLayout(rowView);
 		

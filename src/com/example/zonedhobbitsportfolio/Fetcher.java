@@ -7,8 +7,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +25,7 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 		
 		MainActivity myActivity;
 		
-		public Fetcher (MainActivity act) {
+		public Fetcher(MainActivity act) {
 			this.myActivity = act;
 		}
 		
@@ -74,12 +72,6 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 			return user;
 		}
 
-		@Override
-		protected void onPostExecute(Person user) {
-			super.onPostExecute(user);
-			
-			myActivity.makeMainList(user);
-		}
 		
 		Person showInfoFromDb(String json) throws JSONException {
 			Log.i("FETCHER", json.toString());
@@ -103,6 +95,8 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	   		//Get the strings in the jObject2.
 	   		JSONArray jArrayProjects = jObject.getJSONArray("projects");
 	   		Log.i("ARRAY", jArrayProjects.toString());
+	   		
+	   		projects = new Project[jArrayProjects.length()];
 	   		
 	   		//Change the url of the images to a bitmap object.
 	   		Bitmap normal_img_bitmap = this.grabBitmap(normal_img);
@@ -138,7 +132,7 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	   			
 	   			//Loop the jObjectProjectImages objects and get all the URL.
 	   			for(int v=1; v <= imgLenght; v++) {
-	   				//Log.i("***jObjectProjectImages", jObjectProjectImages.toString());
+	   				Log.i("***jObjectProjectImages", jObjectProjectImages.toString());
 	   				String imageUrl = jObjectProjectImages.getString(Integer.toString(v));
 	   				//Convert the URL string in a bitmap object and add it to bitmapArray.
 	   				bitmapArray[v] = this.grabBitmap(imageUrl);
@@ -147,7 +141,11 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	   			//Creat a project object and pass parameters.
 	   			Project projectObject = new Project(projectName, projectTagline, user, projectType, projectDescription, projectThumbnailBitmap, bitmapArray);
 	   			
+	   			projects[x] = projectObject;
+	   			
 	   		}
+	   		
+	   		user.setProjects(projects);
 	   		
 	   		return user;
 		}
@@ -170,6 +168,12 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	       
 	        return bm;
 	        
+		}
+		
+		@Override
+		protected void onPostExecute(Person user) {
+			super.onPostExecute(user);
+			myActivity.makeMainList(user);
 		}
     	
     }
