@@ -67,7 +67,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			TextView name = (TextView) rowView.findViewById(R.id.name);
 			TextView nickName = (TextView) rowView.findViewById(R.id.nickName);
 			
-			Typeface font = Typeface.createFromAsset(context.getAssets(),"fonts/Edmondsans-Bold.otf");
+			Typeface font = Typeface.createFromAsset(context.getAssets(),"fonts/Edmondsans-Medium.otf");
 			
 			normalImg.setImageBitmap(((Person) rowItem).getNormal_img());
 			
