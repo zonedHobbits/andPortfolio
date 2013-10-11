@@ -10,8 +10,8 @@
     
     <ImageView 
 		android:src="@drawable/ic_launcher"
-	    android:scaleType="fitCenter"
-	    android:layout_height="174.5dp"
+	    android:scaleType="centerCrop"
+	    android:layout_height="173dp"
 	    android:id="@+id/imageView"
 	    android:layout_width="match_parent"
     	android:layout_margin="0dp"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:gravity="center_vertical"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="28.5dp"
         android:layout_marginLeft="192dp" >
 
 	    <TextView

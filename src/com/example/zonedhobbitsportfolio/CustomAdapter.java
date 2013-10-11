@@ -1,6 +1,7 @@
 package com.example.zonedhobbitsportfolio;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,10 +67,16 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			TextView name = (TextView) rowView.findViewById(R.id.name);
 			TextView nickName = (TextView) rowView.findViewById(R.id.nickName);
 			
-			normalImg.setImageBitmap(((Person) rowItem).getNormal_img());
-			name.setText(((Person) rowItem).getName().replaceFirst(" ", "\n"));
-			nickName.setText(((Person) rowItem).getNickName());
+			Typeface font = Typeface.createFromAsset(context.getAssets(),"fonts/Edmondsans-Bold.otf");
 			
+			normalImg.setImageBitmap(((Person) rowItem).getNormal_img());
+			
+			name.setText(((Person) rowItem).getName().replaceFirst(" ", "\n").toUpperCase());
+			
+			nickName.setText("A.K.A "+((Person) rowItem).getNickName().toUpperCase());
+			
+			name.setTypeface(font);
+			nickName.setTypeface(font);
 						
 			//normalImg.setImageBitmap(values[0]);
 
