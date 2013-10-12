@@ -17,6 +17,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -49,6 +51,16 @@ public class MainActivity extends Activity {
         Typeface font = Typeface.createFromAsset(this.getAssets(),"fonts/Edmondsans-Bold.otf");
         header_main.setTypeface(font);
         
+        test.setOnItemClickListener(new OnItemClickListener() {
+            
+        	@Override
+        	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        	
+        		moveToProfile(position, view);
+        		
+        	}
+        });
+        
     }
 
 
@@ -64,7 +76,11 @@ public class MainActivity extends Activity {
     	garcon.execute(url);
     }
     
-    public void moveToProfile(View v){
+    public void moveToProfile(int position, View v){
+    	
+    	Log.i("test.position", test.getItemAtPosition(position).toString());
+    	
+    	
     	Intent i = new Intent(this, ProfileActivity.class);
     	startActivity(i); 
     }

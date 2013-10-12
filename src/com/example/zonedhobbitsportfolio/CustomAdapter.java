@@ -1,14 +1,18 @@
 package com.example.zonedhobbitsportfolio;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class CustomAdapter extends ArrayAdapter<Object> {
 	
@@ -39,7 +43,6 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		fillLayout(rowView, rowItem);
 		
 		return rowView;
-		
 	}
 	
 	public int setLayout(){
