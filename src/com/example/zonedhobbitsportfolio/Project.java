@@ -109,10 +109,10 @@ public class Project implements Parcelable {
 		// TODO Auto-generated method stub
 		dest.writeString(name);
 		dest.writeString(tagline);
-		dest.writeParcelable(creator, PARCELABLE_WRITE_RETURN_VALUE);
+		dest.writeParcelable(creator, 0);
 		dest.writeString(desc);
 		dest.writeString(type);
-		thumbnail.writeToParcel(dest, PARCELABLE_WRITE_RETURN_VALUE);
+		thumbnail.writeToParcel(dest, 0);
 		dest.writeArray(shots);
 		
 	}

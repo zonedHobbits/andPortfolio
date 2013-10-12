@@ -172,8 +172,8 @@ public class Person implements Parcelable {
 		dest.writeString(quote);
 		dest.writeString(nickName);
 		dest.writeString(bio);
-		normal_img.writeToParcel(dest, PARCELABLE_WRITE_RETURN_VALUE);
-		fun_img.writeToParcel(dest, PARCELABLE_WRITE_RETURN_VALUE);
+		normal_img.writeToParcel(dest, 0);
+		fun_img.writeToParcel(dest, 0);
 		dest.writeString(email);
 		dest.writeString(phone);
 		dest.writeString(twitter);
