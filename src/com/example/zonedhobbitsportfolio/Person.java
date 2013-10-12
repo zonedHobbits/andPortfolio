@@ -47,6 +47,21 @@ public class Person implements Parcelable {
 		this.github = github;
 		this.projects = projects;
 	}
+	
+	public Person(Parcel p) {
+		this.name = p.readString();
+		this.quote = p.readString();
+		this.nickName = p.readString();
+		this.bio = p.readString();
+		this.normal_img = p.readParcelable(Bitmap.class.getClassLoader());
+		this.fun_img = p.readParcelable(Bitmap.class.getClassLoader());
+		this.email = p.readString();
+		this.phone = p.readString();
+		this.twitter = p.readString();
+		this.url = p.readString();
+		this.github = p.readString();
+		this.projects = (Project[]) p.readArray(Project.class.getClassLoader());
+	}
 
 	public String getGithub() {
 		return github;

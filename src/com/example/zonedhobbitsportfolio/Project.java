@@ -32,6 +32,16 @@ public class Project implements Parcelable {
 		this.shots = shots;
 	}
 
+	public Project(Parcel p) {
+		this.name = p.readString();
+		this.tagline = p.readString();
+		this.creator = p.readParcelable(Person.class.getClassLoader());
+		this.desc = p.readString();
+		this.type = p.readString();
+		this.thumbnail = p.readParcelable(Bitmap.class.getClassLoader());
+		this.shots = (Bitmap[]) p.readArray(Bitmap.class.getClassLoader());
+	}
+	
 	public String getName() {
 		return name;
 	}

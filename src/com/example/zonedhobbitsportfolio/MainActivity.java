@@ -78,10 +78,10 @@ public class MainActivity extends Activity {
     
     public void moveToProfile(int position, View v){
     	
-    	test.getItemAtPosition(position);
-    	
-    	
     	Intent i = new Intent(this, ProfileActivity.class);
+
+    	i.putExtra("Person", (Person) test.getItemAtPosition(position));
+    	
     	startActivity(i); 
     }
     
