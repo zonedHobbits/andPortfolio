@@ -1,8 +1,10 @@
 package com.example.zonedhobbitsportfolio;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Project {
+public class Project implements Parcelable {
 	
 	String name;
 	
@@ -84,6 +86,25 @@ public class Project {
 
 	public void setShots(Bitmap[] shots) {
 		this.shots = shots;
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		dest.writeString(name);
+		dest.writeString(tagline);
+		dest.writeParcelable(creator, PARCELABLE_WRITE_RETURN_VALUE);
+		dest.writeString(desc);
+		dest.writeString(type);
+		thumbnail.writeToParcel(dest, PARCELABLE_WRITE_RETURN_VALUE);
+		dest.writeArray(shots);
+		
 	}
 
 	

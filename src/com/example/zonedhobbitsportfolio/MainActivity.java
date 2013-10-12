@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
     
     public void moveToProfile(int position, View v){
     	
-    	Log.i("test.position", test.getItemAtPosition(position).toString());
+    	test.getItemAtPosition(position);
     	
     	
     	Intent i = new Intent(this, ProfileActivity.class);
