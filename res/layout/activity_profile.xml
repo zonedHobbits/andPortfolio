@@ -41,22 +41,25 @@
 	            android:layout_width="match_parent"/>
 
 	        <RelativeLayout
-	            android:layout_width="145dp"
+	            android:layout_width="150dp"
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="35dp"
-	            android:layout_gravity="right|center_vertical" >
+	            android:layout_gravity="right|center_vertical" 
+	            android:gravity="right" >
 
 	            <TextView
 	                android:id="@+id/image_funtext_profile"
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
+	                android:gravity="right"
 	                android:textColor="@color/overlay_text_img"
 	                android:textSize="28sp" />
 
 	            <TextView
 	                android:id="@+id/image_funqoute_profile"
-	                android:layout_width="wrap_content"
+	                android:layout_width="150dp"
 	                android:layout_height="wrap_content"
+	                android:gravity="right"
 	                android:layout_below="@+id/image_funtext_profile"
 	                android:textColor="@color/quote_author"
 	                android:textSize="15sp" />
