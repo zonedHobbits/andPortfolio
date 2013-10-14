@@ -23,7 +23,7 @@
 	        android:textColor="@color/divider_text"
 	        android:textSize="24sp"
 	        android:gravity="center"
-	        android:text="Martin Haiek" />
+	        android:text="" />
 	    
 	    <FrameLayout 
 	        android:layout_width="match_parent" 
@@ -80,7 +80,7 @@
 	        android:padding="34dp"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/text_socialheader_profile"
-	        android:text="Contact Info\n testset\n\n eststet \n wefwefwef\n\n \n\n \n\n \n\n \n\n " />
+	        android:text="" />
 	    
 	    <TextView
 	        android:id="@+id/text_projectlistheader_profile"
