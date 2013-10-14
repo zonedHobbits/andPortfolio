@@ -37,8 +37,7 @@ public class ProfileActivity extends Activity {
 		
 		//	Receive & unpack package
 		Intent i = getIntent();
-		i.getExtras();
-
+		
 		p = MainActivity.returnPerson(i.getIntExtra("pos", 0));
 		projects = new Project[p.getProjects().length];
 		
