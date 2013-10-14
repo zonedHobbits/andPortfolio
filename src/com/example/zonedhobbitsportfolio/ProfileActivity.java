@@ -39,7 +39,7 @@ public class ProfileActivity extends Activity {
 		Intent i = getIntent();
 		
 		p = MainActivity.returnPerson(i.getIntExtra("pos", 0));
-		projects = new Project[p.getProjects().length];
+		projects = new Project[p.projects.length];
 		
 		for(int iterator = 0; iterator < projects.length; iterator++) {
 			projects[iterator] = p.projects[iterator];
