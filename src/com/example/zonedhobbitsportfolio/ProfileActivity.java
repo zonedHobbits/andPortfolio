@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.text.Html;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class ProfileActivity extends Activity {
 
@@ -58,12 +61,24 @@ public class ProfileActivity extends Activity {
         projectListHeader = (TextView) findViewById(R.id.text_projectlistheader_profile);
         listSelectedWork = (ListView) findViewById(R.id.list_selectedwork);
         
+        //	Set listener for list items
+        
+        listSelectedWork.setOnItemClickListener(new OnItemClickListener() {
+            
+        	@Override
+        	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        	
+        		moveToProject(position, view);
+        		
+        	}
+        });
+        
         //	Dump in vars
         profileText.setText(p.getName());
         
         funImg.setImageBitmap(p.getFun_img());
-        quote.setText(p.getQuote());
-        image_funquote_text.setText("Ð "+p.getNickName());
+        quote.setText(p.getQuote().toUpperCase());
+        image_funquote_text.setText("Ð "+p.getNickName().toUpperCase());
         
         bio.setText(p.getBio());
         
@@ -96,6 +111,17 @@ public class ProfileActivity extends Activity {
 		getMenuInflater().inflate(R.menu.profile, menu);
 		return true;
 	}
+	
+	public void moveToProject(int position, View v){
+    	
+    	Intent i = new Intent(this, ProjectActivity.class);
+
+    	//i.putExtra("Person", (Person) test.getItemAtPosition(position));
+    	
+    	i.putExtra("pos", position);
+    	
+    	startActivity(i); 
+    }
 	
 	public static Project returnProject(int pos){
 		return projects[pos];
