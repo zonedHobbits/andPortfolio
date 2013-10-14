@@ -81,13 +81,13 @@ public class ProfileActivity extends Activity {
         profileText.setText(p.getName());
         
         funImg.setImageBitmap(p.getFun_img());
-        quote.setText(p.getQuote().toUpperCase());
+        quote.setText("\""+p.getQuote().toUpperCase()+"\"");
         image_funquote_text.setText(p.getNickName().toUpperCase());
         
         bio.setText(p.getBio());
         
         //	Let's build us a proper lil' contact string
-        String contactString = "<b>E-mail</b>\t\t"+p.getEmail()+"<br/><b>Twitter</b>\t\t"+p.getTwitter()+"<br/><b>Phone</b>\t\t"+p.getPhone()+"<br/><b>URL</b>\t\t\t\t"+p.getUrl()+"<br/><b>GitHub</b>\t\t"+p.getGithub();
+        String contactString = "<b>E-mail</b>\t\t"+p.getEmail()+"<br/><b>Twitter</b>\t\t"+p.getTwitter()+"<br/><b>Phone</b>\t\t\t"+p.getPhone()+"<br/><b>URL</b>\t\t\t\t"+p.getUrl()+"<br/><b>GitHub</b>\t\t"+p.getGithub();
         
         contact.setText(Html.fromHtml(contactString));
         
@@ -103,6 +103,7 @@ public class ProfileActivity extends Activity {
         projectListHeader.setTypeface(EdmondBold);
         
         quote.setTypeface(EdmondMed);
+        image_funquote_text.setTypeface(EdmondMed);
         
         bio.setTypeface(PTSans);
         contact.setTypeface(PTSans);
