@@ -17,13 +17,15 @@ public class ProfileActivity extends Activity {
 	TextView profileText;
     ImageView funImg;
     TextView quote;
+    TextView image_funquote_text;
     TextView bio;
     TextView contactHeader;
     TextView contact;
     TextView projectListHeader;
     
     ListView listSelectedWork;
-	
+	static Project[] projects;
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,12 +37,18 @@ public class ProfileActivity extends Activity {
 		//p = (Person) i.getParcelableExtra("pOi");
 
 		p = MainActivity.returnPerson(i.getIntExtra("pos", 0));
+		projects = new Project[p.getProjects().length];
+		
+		for(int iterator = 0; iterator < projects.length; iterator++) {
+			projects[iterator] = p.projects[iterator];
+		}
 		
 		//	Grab view resources
         profileText = (TextView) findViewById(R.id.text_header_profile);
         
         funImg = (ImageView) findViewById(R.id.image_funimg_profile);
         quote = (TextView) findViewById(R.id.image_funtext_profile);
+        image_funquote_text = (TextView) findViewById(R.id.image_funqoute_profile);
         
         bio = (TextView) findViewById(R.id.text_desc_profile);
         
@@ -55,6 +63,7 @@ public class ProfileActivity extends Activity {
         
         funImg.setImageBitmap(p.getFun_img());
         quote.setText(p.getQuote());
+        image_funquote_text.setText("Ð "+p.getNickName());
         
         bio.setText(p.getBio());
         
@@ -88,8 +97,8 @@ public class ProfileActivity extends Activity {
 		return true;
 	}
 	
-	public Project returnProject(int pos){
-		return p.projects[pos];
+	public static Project returnProject(int pos){
+		return projects[pos];
 	}
 
 }
