@@ -2,13 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="0dp"
+    android:layout_margin="0dp"
     android:overScrollMode="never"
     android:scrollbars="none"
     tools:context=".ProfileActivity" >
     
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="0dp"
+    	android:layout_margin="0dp"
         android:orientation="vertical" >
 
 	    <TextView
@@ -25,18 +29,22 @@
 	        android:layout_width="match_parent" 
 	        android:layout_height="173dp" 
 	        android:id="@+id/image_funwrapper_profile"
+	        android:padding="0dp"
+    		android:layout_margin="0dp"
 	        android:layout_below="@+id/text_header_profile">
 	        
 	        <ImageView 
 				android:src="@drawable/ic_launcher"
 	            android:layout_height="match_parent"
 	            android:id="@+id/image_funimg_profile"
+	            android:scaleType="centerCrop"
 	            android:layout_width="match_parent"/>
 	        
 	        <TextView
-				android:text="ARAGORN WHAT ARE YOU DOING?"
-				android:textSize="30sp"
-				android:textStyle="bold"
+				android:text=""
+				android:textSize="25sp"
+				android:layout_marginTop="50dp"
+				android:layout_marginRight="44dp"
 	            android:textColor="#003399"
 	            android:layout_height="match_parent"
 	            android:id="@+id/image_funtext_profile"
@@ -84,6 +92,15 @@
 	        android:gravity="center"
 	        android:layout_below="@+id/text_social_profile"
 	        android:text="Selected work" />
+	    
+	    <ListView
+	        android:id="@+id/list_selectedwork"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="0dp"
+	    	android:layout_margin="0dp"
+	        android:layout_below="@+id/text_projectlistheader_profile" >
+    	</ListView>
     
     </RelativeLayout>
 
