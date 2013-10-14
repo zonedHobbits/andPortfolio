@@ -8,6 +8,7 @@ import android.text.Html;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ public class ProfileActivity extends Activity {
     TextView contact;
     TextView projectListHeader;
     
-    ListView listSelectedWork;
+    GridView listSelectedWork;
 	static Project[] projects;
     
 	@Override
@@ -59,7 +60,7 @@ public class ProfileActivity extends Activity {
         contact = (TextView) findViewById(R.id.text_social_profile);
         
         projectListHeader = (TextView) findViewById(R.id.text_projectlistheader_profile);
-        listSelectedWork = (ListView) findViewById(R.id.list_selectedwork);
+        listSelectedWork = (GridView) findViewById(R.id.list_selectedwork);
         
         //	Set up list items
         
