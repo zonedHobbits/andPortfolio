@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.text.Html;
 import android.view.Menu;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class ProfileActivity extends Activity {
@@ -21,6 +22,7 @@ public class ProfileActivity extends Activity {
     TextView contact;
     TextView projectListHeader;
     
+    ListView listSelectedWork;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class ProfileActivity extends Activity {
         contact = (TextView) findViewById(R.id.text_social_profile);
         
         projectListHeader = (TextView) findViewById(R.id.text_projectlistheader_profile);
+        listSelectedWork = (ListView) findViewById(R.id.list_selectedwork);
         
         //	Dump in vars
         profileText.setText(p.getName());
@@ -61,8 +64,13 @@ public class ProfileActivity extends Activity {
         contact.setText(Html.fromHtml(contactString));
         
 		//	Test fonts        		
-        Typeface typeFace=Typeface.createFromAsset(getAssets(),"fonts/Edmondsans-Bold.otf");
-        profileText.setTypeface(typeFace);
+        Typeface EdmondBold = Typeface.createFromAsset(getAssets(),"fonts/Edmondsans-Bold.otf");
+        Typeface EdmondMed = Typeface.createFromAsset(getAssets(), "fonts/Edmondsans-Medium.otf");
+        Typeface Edmond = Typeface.createFromAsset(getAssets(), "fonts/Edmondsans-Regular.otf");
+        
+        Typeface PTSans = Typeface.createFromAsset(getAssets(), "fonts/PTSans.ttc");
+        
+        profileText.setTypeface(EdmondBold);
         
 	}
 
@@ -71,6 +79,10 @@ public class ProfileActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.profile, menu);
 		return true;
+	}
+	
+	public Project returnProject(int pos){
+		return p.projects[pos];
 	}
 
 }
