@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 	ListView test;
 	TextView header_main;
 	
-	Person[] arraypersons = new Person[3];
+	static Person[] arraypersons = new Person[3];
 	
 	int i = 0;
 
@@ -100,7 +100,7 @@ public class MainActivity extends Activity {
     	}
     }
     
-    public Person returnPerson(int pos) {
+    public static Person returnPerson(int pos) {
     	return arraypersons[pos];
     }
     

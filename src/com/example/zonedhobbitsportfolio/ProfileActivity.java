@@ -29,7 +29,9 @@ public class ProfileActivity extends Activity {
 		//	Receive & unpack package
 		Intent i = getIntent();
 		i.getExtras();
-		p = (Person) i.getParcelableExtra("pOi");
+		//p = (Person) i.getParcelableExtra("pOi");
+
+		p = MainActivity.returnPerson(i.getIntExtra("pos", 0));
 		
 		//	Grab view resources
         profileText = (TextView) findViewById(R.id.text_header_profile);
