@@ -20,6 +20,7 @@ public class ProfileActivity extends Activity {
     TextView contactHeader;
     TextView contact;
     TextView projectListHeader;
+    
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class ProfileActivity extends Activity {
         bio.setText(p.getBio());
         
         //	Let's build us a proper lil' contact string
-        String contactString = "<b>E-mail</b>\t\t"+p.getEmail()+"<br/><b>Twitter</b>\t\t"+p.getTwitter()+"<br/><b>Phone</b>\t\t"+p.getPhone()+"<br/><b>URL</b>\t\t"+p.getUrl()+"<br/><b>GitHub</b>\t\t"+p.getGithub();
+        String contactString = "<b>E-mail</b>\t\t"+p.getEmail()+"<br/><b>Twitter</b>\t\t"+p.getTwitter()+"<br/><b>Phone</b>\t\t"+p.getPhone()+"<br/><b>URL</b>\t\t\t\t"+p.getUrl()+"<br/><b>GitHub</b>\t\t"+p.getGithub();
         
         contact.setText(Html.fromHtml(contactString));
         
