@@ -49,14 +49,14 @@ public class ProjectActivity extends Activity {
 		return true;
 	}
 	
-	/*public void recoverExtras() {
+	public void recoverExtras() {
 		i = getIntent();
 		i.getExtras();
 		p = ProfileActivity.returnProject(i.getIntExtra("pos", 0));
 		header_text = p.getDesc();
 		desc_text = p.getDesc();
 		shots = p.getShots();
-	}*/
+	}
 	
 	public void setValues() {
 		header.setText(header_text);

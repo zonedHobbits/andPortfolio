@@ -2,6 +2,7 @@ package com.example.zonedhobbitsportfolio;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -89,6 +90,11 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			//FILL FIELDS
 		}
 		*/
+		else if(checkId == R.id.list_project) {
+			//CONTINUE HERE.
+			ImageView projectImage = (ImageView) rowView.findViewById(R.id.projectImageView);
+			projectImage.setImageBitmap((Bitmap) rowItem);
+		}
 		
 	}
 
