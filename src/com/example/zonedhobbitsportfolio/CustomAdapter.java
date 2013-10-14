@@ -51,9 +51,9 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		if(checkId == R.id.list_main) {
 			return R.layout.main_list_row;
 		}
-		//else if(checkId == R.id.list_profile) {
-			//return R.layout.project_list_row;
-		//}
+		else if(checkId == R.id.list_selectedwork) {
+			return R.layout.project_list_row;
+		}
 		else if(checkId == R.id.list_project){
 			return R.layout.project_img_row;
 		}
@@ -84,13 +84,11 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 						
 			//normalImg.setImageBitmap(values[0]);
 
-		}
-		/*
-		else if(checkId == R.id.list_profile) {
+		} else if(checkId == R.id.list_selectedwork) {
 			//FILL FIELDS
-		}
-		*/
-		else if(checkId == R.id.list_project) {
+			Log.i("***PROFILE GRIDVIEW", "THIS WURKZ!");
+		
+		} else if(checkId == R.id.list_project) {
 			//CONTINUE HERE.
 			ImageView projectImage = (ImageView) rowView.findViewById(R.id.projectImageView);
 			projectImage.setImageBitmap((Bitmap) rowItem);
