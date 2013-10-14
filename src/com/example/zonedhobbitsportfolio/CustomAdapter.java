@@ -86,8 +86,13 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 
 		} else if(checkId == R.id.list_selectedwork) {
 			//FILL FIELDS
-			Log.i("***PROFILE GRIDVIEW", "THIS WURKZ!");
-		
+			ImageView thumbholder = (ImageView) rowView.findViewById(R.id.thumbholder);
+			TextView projectName = (TextView) rowView.findViewById(R.id.projectname);
+			TextView projectType = (TextView) rowView.findViewById(R.id.projecttype);
+			
+//			thumbholder.setImageBitmap(bm)
+			
+
 		} else if(checkId == R.id.list_project) {
 			//CONTINUE HERE.
 			ImageView projectImage = (ImageView) rowView.findViewById(R.id.projectImageView);
