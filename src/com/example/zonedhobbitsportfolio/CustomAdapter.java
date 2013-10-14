@@ -50,13 +50,13 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		if(checkId == R.id.list_main) {
 			return R.layout.main_list_row;
 		}
-		/*else if(checkId == R.id.list_profile) {
-			return R.layout.project_list_row;
+		//else if(checkId == R.id.list_profile) {
+			//return R.layout.project_list_row;
+		//}
+		else if(checkId == R.id.list_project){
+			return R.layout.project_img_row;
 		}
-		else{
-			
-		}
-		*/
+		
 		
 		return 0;
 	}
