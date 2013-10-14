@@ -53,7 +53,7 @@ public class ProfileActivity extends Activity {
         bio.setText(p.getBio());
         
         //	Let's build us a proper lil' contact string
-        String contactString = "<b>E-mail</b> "+p.getEmail()+"\n<b>Twitter</b> "+p.getTwitter()+"\n<b>Phone</b> "+p.getPhone()+"\n<b>URL</b> "+p.getUrl()+"\n<b>GitHub</b> "+p.getGithub();
+        String contactString = "<b>E-mail</b> "+p.getEmail()+"<br/><b>Twitter</b> "+p.getTwitter()+"<br/><b>Phone</b> "+p.getPhone()+"<br/><b>URL</b> "+p.getUrl()+"<br/><b>GitHub</b> "+p.getGithub();
         
         contact.setText(Html.fromHtml(contactString));
         
