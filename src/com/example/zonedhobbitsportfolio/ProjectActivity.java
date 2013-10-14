@@ -39,7 +39,7 @@ public class ProjectActivity extends Activity {
 		Log.i("P.SHOTS", p.toString());
 		
 		//Set the adapter to the ListView
-		CustomAdapter imgAdapter = new CustomAdapter(this, lvImg.getId(), p.shots);
+		CustomAdapter imgAdapter = new CustomAdapter(this, lvImg.getId(), p.getShots());
 		lvImg.setAdapter(imgAdapter);
 		
 		//	Set values

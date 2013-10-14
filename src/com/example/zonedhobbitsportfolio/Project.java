@@ -89,6 +89,10 @@ public class Project implements Parcelable {
 	public void setThumbnail(Bitmap thumbnail) {
 		this.thumbnail = thumbnail;
 	}
+	
+	public Bitmap getShot(int pos) {
+		return shots[pos];
+	}
 
 	public Bitmap[] getShots() {
 		return shots;

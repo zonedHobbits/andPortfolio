@@ -89,8 +89,10 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			ImageView thumbholder = (ImageView) rowView.findViewById(R.id.thumbholder);
 			TextView projectName = (TextView) rowView.findViewById(R.id.projectname);
 			TextView projectType = (TextView) rowView.findViewById(R.id.projecttype);
-			
-//			thumbholder.setImageBitmap(bm)
+
+			projectName.setText(((Project) rowItem).getName());
+			projectType.setText(((Project) rowItem).getType());
+			thumbholder.setImageBitmap(((Project) rowItem).getThumbnail());
 			
 
 		} else if(checkId == R.id.list_project) {
@@ -99,7 +101,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 			
 			ImageView projectImage = (ImageView) rowView.findViewById(R.id.projectImageView);
 			
-			projectImage.setImageBitmap((Bitmap) values[position]);
+			projectImage.setImageBitmap(((Bitmap) rowItem));
 		}
 		
 	}
