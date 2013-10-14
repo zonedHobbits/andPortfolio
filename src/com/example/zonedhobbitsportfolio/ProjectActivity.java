@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,14 +33,17 @@ public class ProjectActivity extends Activity {
 		lvImg = (ListView) findViewById(R.id.list_project);
 		
 		//Recover he extras sent to the activity from ProfileActivity.
-		this.recoverExtras();
+		i = getIntent();
+		p = ProfileActivity.returnProject(i.getIntExtra("pos", 0));
 		
-		//Set the values;
-		this.setValues();
+		Log.i("P.SHOTS", p.toString());
 		
 		//Set the adapter to the ListView
-		CustomAdapter imgAdapter = new CustomAdapter(this, lvImg.getId(), p.getShots());
+		CustomAdapter imgAdapter = new CustomAdapter(this, lvImg.getId(), p.shots);
 		lvImg.setAdapter(imgAdapter);
+		
+		//	Set values
+		setValues();
 	}
 
 	@Override
@@ -49,14 +53,9 @@ public class ProjectActivity extends Activity {
 		return true;
 	}
 	
-	public void recoverExtras() {
-		i = getIntent();
-		p = ProfileActivity.returnProject(i.getIntExtra("pos", 0));
-	}
-	
 	public void setValues() {
-		header.setText(header_text);
-		desc.setText(desc_text);
+		header.setText(p.getName());
+		desc.setText(p.getDesc());
 	}
 
 }

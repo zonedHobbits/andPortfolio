@@ -95,8 +95,11 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 
 		} else if(checkId == R.id.list_project) {
 			//CONTINUE HERE.
+			int position = getPosition(rowItem);
+			
 			ImageView projectImage = (ImageView) rowView.findViewById(R.id.projectImageView);
-			projectImage.setImageBitmap((Bitmap) rowItem);
+			
+			projectImage.setImageBitmap((Bitmap) values[position]);
 		}
 		
 	}
