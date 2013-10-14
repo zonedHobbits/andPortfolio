@@ -41,15 +41,28 @@
 	            android:layout_width="match_parent"/>
 	        
 	        <TextView
-				android:text=""
-				android:textSize="25sp"
-				android:layout_marginTop="50dp"
-				android:layout_marginRight="44dp"
-	            android:textColor="#003399"
-	            android:layout_height="match_parent"
 	            android:id="@+id/image_funtext_profile"
-	            android:layout_width="match_parent"
-	            android:gravity="right"/>
+	            android:layout_width="132dp"
+	            android:layout_height="match_parent"
+	            android:layout_gravity="right|center_vertical"
+	            android:layout_marginRight="44dp"
+	            android:layout_marginTop="50dp"
+	            android:gravity="right"
+	            android:text=""
+	            android:textColor="#003399"
+	            android:textSize="25sp" />
+	        
+	        <TextView
+	            android:id="@+id/image_funqoute_profile"
+	            android:layout_width="132dp"
+	            android:layout_height="match_parent"
+	            android:layout_gravity="right"
+	            android:layout_marginTop="10dp"
+	            android:gravity="right"
+	            android:text=""
+	            android:textColor="#003399"
+	            android:layout_below="@+id/image_funtext_profile"
+	            android:textSize="25sp" />
 	        
 		</FrameLayout>
 	
@@ -58,7 +71,11 @@
 	        android:layout_width="match_parent"
 	        android:background="@color/divider_text"
 	        android:lineSpacingExtra="10sp"
-	        android:padding="34dp"
+	        android:paddingTop="34dp"
+	        android:textSize="15sp"
+	        android:paddingLeft="34dp"
+	        android:paddingRight="34dp"
+	        android:paddingBottom="24dp"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/image_funwrapper_profile"
 	        android:text="Description" />
@@ -79,6 +96,7 @@
 	        android:layout_width="match_parent"
 	        android:background="@color/divider_text"
 	        android:lineSpacingExtra="10sp"
+	        android:textSize="15sp"
 	        android:paddingTop="34dp"
 	        android:paddingLeft="34dp"
 	        android:paddingRight="34dp"
