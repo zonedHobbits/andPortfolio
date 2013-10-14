@@ -81,7 +81,7 @@ public class ProfileActivity extends Activity {
         
         funImg.setImageBitmap(p.getFun_img());
         quote.setText(p.getQuote().toUpperCase());
-        image_funquote_text.setText("&ndash; "+p.getNickName().toUpperCase());
+        image_funquote_text.setText(p.getNickName().toUpperCase());
         
         bio.setText(p.getBio());
         
