@@ -113,16 +113,17 @@
 	        android:gravity="center"
 	        android:layout_below="@+id/text_social_profile"
 	        android:text="Selected work" />
-	    
-	    <ListView
+
+	    <GridView
 	        android:id="@+id/list_selectedwork"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
+	        android:numColumns="2"	        
 	        android:padding="0dp"
 	    	android:layout_margin="0dp"
 	        android:layout_below="@+id/text_projectlistheader_profile" >
-    	</ListView>
-    
+	    </GridView>
+	    
     </RelativeLayout>
 
 </ScrollView>

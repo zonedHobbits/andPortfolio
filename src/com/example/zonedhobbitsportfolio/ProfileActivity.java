@@ -61,7 +61,7 @@ public class ProfileActivity extends Activity {
         projectListHeader = (TextView) findViewById(R.id.text_projectlistheader_profile);
         listSelectedWork = (ListView) findViewById(R.id.list_selectedwork);
         
-        //	Set listener for list items
+        //	Set up list items
         
         listSelectedWork.setOnItemClickListener(new OnItemClickListener() {
             
@@ -73,12 +73,15 @@ public class ProfileActivity extends Activity {
         	}
         });
         
+        CustomAdapter test1 = new CustomAdapter(this, listSelectedWork.getId(), projects);  
+        listSelectedWork.setAdapter(test1);
+		
         //	Dump in vars
         profileText.setText(p.getName());
         
         funImg.setImageBitmap(p.getFun_img());
         quote.setText(p.getQuote().toUpperCase());
-        image_funquote_text.setText("Ð "+p.getNickName().toUpperCase());
+        image_funquote_text.setText("&ndash; "+p.getNickName().toUpperCase());
         
         bio.setText(p.getBio());
         
