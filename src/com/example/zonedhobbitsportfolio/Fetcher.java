@@ -47,11 +47,11 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	            int read;
 	            char[] buff = new char[1024];
 	            json.append(buff, 0, in.read(buff));
-	            /*
+	            
 	            while ((read = in.read(buff)) != -1) {
 	                json.append(buff, 0, read);
 	            }
-	            */
+	            
 	            
 	        } catch (IOException e) {
 	            Log.e("myTag", "Error connecting", e);
