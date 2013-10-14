@@ -80,7 +80,9 @@ public class MainActivity extends Activity {
     	
     	Intent i = new Intent(this, ProfileActivity.class);
 
-    	i.putExtra("Person", (Person) test.getItemAtPosition(position));
+    	//i.putExtra("Person", (Person) test.getItemAtPosition(position));
+    	
+    	i.putExtra("pos", position);
     	
     	startActivity(i); 
     }
@@ -96,6 +98,10 @@ public class MainActivity extends Activity {
             test.setAdapter(test1);
     		
     	}
+    }
+    
+    public Person returnPerson(int pos) {
+    	return arraypersons[pos];
     }
     
 }
