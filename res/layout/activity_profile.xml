@@ -61,7 +61,6 @@
 	            android:gravity="right"
 	            android:text=""
 	            android:textColor="#003399"
-	            android:layout_below="@+id/image_funtext_profile"
 	            android:textSize="25sp" />
 	        
 		</FrameLayout>
@@ -77,8 +76,7 @@
 	        android:paddingRight="34dp"
 	        android:paddingBottom="24dp"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/image_funwrapper_profile"
-	        android:text="Description" />
+	        android:layout_below="@+id/image_funwrapper_profile" />
 	    
 	    <TextView
 	        android:id="@+id/text_socialheader_profile"
