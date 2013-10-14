@@ -26,6 +26,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        moveToSplash();
+        
         test = (ListView) findViewById(R.id.list_main);
         
         header_main = (TextView) findViewById(R.id.text_header_main);
@@ -75,6 +77,11 @@ public class MainActivity extends Activity {
     	startActivity(i); 
     }
     
+    public void moveToSplash(){
+    	Intent splashScreen = new Intent(this, SplashScreenActivity.class);
+    	startActivity(splashScreen);
+    }
+    
     public void makeMainList(Person person) {
     	Log.i("PERSON", person.toString());
     	arraypersons[i] = person;
@@ -84,6 +91,7 @@ public class MainActivity extends Activity {
     		
     		CustomAdapter test1 = new CustomAdapter(this, test.getId(), arraypersons);  
             test.setAdapter(test1);
+            SplashScreenActivity.finishSplash();
     		
     	}
     }
