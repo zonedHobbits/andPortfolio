@@ -140,7 +140,7 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	   			}
 	   			
 	   			//Creat a project object and pass parameters.
-	   			Project projectObject = new Project(projectName, projectTagline, user, projectType, projectDescription, projectThumbnailBitmap, bitmapArray);
+	   			Project projectObject = new Project(projectName, projectTagline, user,projectDescription, projectType, projectThumbnailBitmap, bitmapArray);
 	   			
 	   			projects[x] = projectObject;
 	   			
