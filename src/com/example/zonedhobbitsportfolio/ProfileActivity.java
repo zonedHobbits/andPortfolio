@@ -71,6 +71,13 @@ public class ProfileActivity extends Activity {
         Typeface PTSans = Typeface.createFromAsset(getAssets(), "fonts/PTSans.ttc");
         
         profileText.setTypeface(EdmondBold);
+        contactHeader.setTypeface(EdmondBold);
+        projectListHeader.setTypeface(EdmondBold);
+        
+        quote.setTypeface(EdmondMed);
+        
+        bio.setTypeface(PTSans);
+        contact.setTypeface(PTSans);
         
 	}
 
