@@ -47,13 +47,15 @@ public class ProfileActivity extends Activity {
         projectListHeader = (TextView) findViewById(R.id.text_projectlistheader_profile);
         
         //	Dump in vars
+        profileText.setText(p.getName());
+        
         funImg.setImageBitmap(p.getFun_img());
         quote.setText(p.getQuote());
         
         bio.setText(p.getBio());
         
         //	Let's build us a proper lil' contact string
-        String contactString = "<b>E-mail</b> "+p.getEmail()+"<br/><b>Twitter</b> "+p.getTwitter()+"<br/><b>Phone</b> "+p.getPhone()+"<br/><b>URL</b> "+p.getUrl()+"<br/><b>GitHub</b> "+p.getGithub();
+        String contactString = "<b>E-mail</b>     "+p.getEmail()+"<br/><b>Twitter</b> "+p.getTwitter()+"<br/><b>Phone</b>     "+p.getPhone()+"<br/><b>URL</b> "+p.getUrl()+"<br/><b>GitHub</b>     "+p.getGithub();
         
         contact.setText(Html.fromHtml(contactString));
         
