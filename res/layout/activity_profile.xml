@@ -119,9 +119,11 @@
 	    <GridView
 	        android:id="@+id/list_selectedwork"
 	        android:layout_width="match_parent"
-	        android:layout_height="600dp"
+	        android:layout_height="wrap_content"
 	        android:numColumns="2"	        
 	        android:horizontalSpacing="16.5dp"
+	        android:stretchMode="columnWidth" 
+	        android:columnWidth="230dp"
 	        android:verticalSpacing="16.5dp"
 	        android:padding="16.5dp"
 	    	android:layout_margin="0dp"

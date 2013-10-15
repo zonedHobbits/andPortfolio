@@ -91,11 +91,11 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		} else if(checkId == R.id.list_selectedwork) {
 			//FILL FIELDS
 			ImageView thumbholder = (ImageView) rowView.findViewById(R.id.thumbholder);
-			TextView projectName = (TextView) rowView.findViewById(R.id.projectname);
-			TextView projectType = (TextView) rowView.findViewById(R.id.projecttype);
+			//TextView projectName = (TextView) rowView.findViewById(R.id.projectname);
+			//TextView projectType = (TextView) rowView.findViewById(R.id.projecttype);
 
-			projectName.setText(((Project) rowItem).getName());
-			projectType.setText(((Project) rowItem).getType());
+			//projectName.setText(((Project) rowItem).getName());
+			//projectType.setText(((Project) rowItem).getType());
 			thumbholder.setImageBitmap(((Project) rowItem).getThumbnail());
 			
 
