@@ -13,6 +13,7 @@ public class ProjectActivity extends Activity {
 
 	//Declare objects.
 	TextView header;
+	TextView tagline;
 	TextView desc;
 	ListView lvImg;
 	
@@ -29,6 +30,7 @@ public class ProjectActivity extends Activity {
 		setContentView(R.layout.activity_project);
 		
 		header = (TextView) findViewById(R.id.text_header_project);
+		tagline = (TextView) findViewById(R.id.text_tagline_project);
 		desc = (TextView) findViewById(R.id.text_desc_project);
 		lvImg = (ListView) findViewById(R.id.list_project);
 		
@@ -36,7 +38,7 @@ public class ProjectActivity extends Activity {
 		i = getIntent();
 		p = ProfileActivity.returnProject(i.getIntExtra("pos", 0));
 		
-		Log.i("P.SHOTS", p.toString());
+		Log.i("P.SHOTS", p.getShots().toString());
 		
 		//Set the adapter to the ListView
 		CustomAdapter imgAdapter = new CustomAdapter(this, lvImg.getId(), p.getShots());
@@ -55,6 +57,7 @@ public class ProjectActivity extends Activity {
 	
 	public void setValues() {
 		header.setText(p.getName());
+		tagline.setText(p.getTagline());
 		desc.setText(p.getDesc());
 	}
 
