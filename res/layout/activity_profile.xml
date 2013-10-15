@@ -122,6 +122,8 @@
 	        android:layout_height="wrap_content"
 	        android:numColumns="2"	        
 	        android:horizontalSpacing="16.5dp"
+	        android:verticalSpacing="16.5dp"
+	        android:padding="16.5dp"
 	        android:gravity="center"
 	    	android:layout_margin="0dp"
 	        android:layout_below="@+id/text_projectlistheader_profile" >
