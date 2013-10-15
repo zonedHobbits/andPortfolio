@@ -22,7 +22,6 @@
 	        android:text="Memorandom" />
 	    
 	    <TextView
-	        android:id="@+id/text_desc_project"
 	        android:id="@+id/text_tagline_project"
 	        android:layout_width="match_parent"
 	        android:background="@color/divider_text"
