@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
     android:overScrollMode="never"
+    android:scrollbars="none"
     tools:context=".ProjectActivity" >
         
     <RelativeLayout
@@ -19,23 +19,42 @@
 	        android:textColor="@color/divider_text"
 	        android:textSize="24sp"
 	        android:gravity="center"
-	        android:text="Memorandom" />
+	        android:text="" />
 	    
 	    <TextView
-	        android:id="@+id/text_desc_project"
+	        android:id="@+id/text_tagline_project"
 	        android:layout_width="match_parent"
 	        android:background="@color/divider_text"
 	        android:padding="34dp"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/text_header_project"
-	        android:text="Description" />
-	
+	        android:textStyle="italic"
+	        android:text="" />
+	    
+	    <TextView
+	        android:id="@+id/text_desc_project"
+	        android:layout_width="match_parent"
+	        android:background="@color/divider_text"
+	        android:paddingTop="0dp"
+	        android:paddingBottom="34dp"
+	        android:paddingLeft="34dp"
+	        android:paddingRight="34dp"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/text_tagline_project"
+	        android:text="" />
+	    
+	    
+
 	    <ListView
 	        android:id="@+id/list_project"
 	        android:layout_width="match_parent"
+	        android:background="@color/divider_text"
+	        android:divider="@null"
+			android:dividerHeight="0dp"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/text_desc_project"
-	        android:padding="34dp" />
+	        android:layout_below="@+id/text_desc_project">
+
+	    </ListView>
 
     </RelativeLayout>
     

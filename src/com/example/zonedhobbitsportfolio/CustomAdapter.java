@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -41,7 +43,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		View rowView = inflater.inflate(setLayout(), parent, false);
 		
 		// Fill fields
-		fillLayout(rowView, rowItem);
+		fillLayout(rowView, rowItem, parent);
 		
 		Log.i("FU", values.toString());
 		
@@ -64,7 +66,7 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		return 0;
 	}
 	
-	public void fillLayout(View rowView, Object rowItem){
+	public void fillLayout(View rowView, Object rowItem, final ViewGroup parent){
 		
 		if(checkId == R.id.list_main) {
 			//FILL FIELDS
@@ -100,12 +102,19 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		} else if(checkId == R.id.list_project) {
 			//CONTINUE HERE.
 			int position = getPosition(rowItem);
-			ImageView projectImage = (ImageView) rowView.findViewById(R.id.projectImageView);
-
-				projectImage.setImageBitmap(((Bitmap) rowItem));
 			
+			final ImageView projectImage = (ImageView) rowView.findViewById(R.id.projectImageView);
+			final ListView list_p = (ListView) parent;
+			
+			
+				projectImage.setImageBitmap(((Bitmap) rowItem));
+				
+				
+				
 		}
-		
+			
 	}
-
+		
 }
+
+

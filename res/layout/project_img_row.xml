@@ -5,6 +5,7 @@
     <ImageView
         android:id="@+id/projectImageView"
         android:layout_width="fill_parent"
+        android:paddingBottom="28dp"
         android:layout_height="fill_parent" />
 
 </RelativeLayout>
