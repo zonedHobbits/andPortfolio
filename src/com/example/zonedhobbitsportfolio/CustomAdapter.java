@@ -43,6 +43,8 @@ public class CustomAdapter extends ArrayAdapter<Object> {
 		// Fill fields
 		fillLayout(rowView, rowItem);
 		
+		Log.i("FU", values.toString());
+		
 		return rowView;
 	}
 	
