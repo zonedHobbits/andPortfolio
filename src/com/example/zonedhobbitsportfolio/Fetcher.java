@@ -129,12 +129,12 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 	   			
 	   			
 	   			//Create a Bitmap array;
-	   			Bitmap[] bitmapArray = new Bitmap[imgLenght +1];
+	   			Bitmap[] bitmapArray = new Bitmap[imgLenght];
 	   			
 	   			//Loop the jObjectProjectImages objects and get all the URL.
-	   			for(int v=1; v <= imgLenght; v++) {
+	   			for(int v=0; v < imgLenght; v++) {
 	   				Log.i("***jObjectProjectImages", jObjectProjectImages.toString());
-	   				String imageUrl = jObjectProjectImages.getString(Integer.toString(v));
+	   				String imageUrl = jObjectProjectImages.getString(Integer.toString(v+1));
 	   				//Convert the URL string in a bitmap object and add it to bitmapArray.
 	   				bitmapArray[v] = this.grabBitmap(imageUrl);
 	   			}
