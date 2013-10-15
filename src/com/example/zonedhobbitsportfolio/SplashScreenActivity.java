@@ -1,7 +1,10 @@
 package com.example.zonedhobbitsportfolio;
 
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.ViewGroup;
 import android.app.Activity;
+import android.graphics.Color;
 
 public class SplashScreenActivity extends Activity {
 
@@ -14,6 +17,8 @@ public class SplashScreenActivity extends Activity {
     
     GifWebView view = new GifWebView(this, "file:///android_asset/ring.gif"); 
     setContentView(view);
+    
+    view.setBackgroundColor(Color.BLACK);
     
     activity = this;
   }
