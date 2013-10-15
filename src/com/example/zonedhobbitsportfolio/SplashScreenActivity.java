@@ -1,10 +1,7 @@
 package com.example.zonedhobbitsportfolio;
 
-import java.util.Timer;
-import java.util.TimerTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 
 public class SplashScreenActivity extends Activity {
 
@@ -14,7 +11,9 @@ public class SplashScreenActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_splash_screen);
+    
+    GifWebView view = new GifWebView(this, "file:///android_asset/ring.gif"); 
+    setContentView(view);
     
     activity = this;
   }

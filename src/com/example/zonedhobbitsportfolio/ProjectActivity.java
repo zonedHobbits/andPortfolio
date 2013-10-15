@@ -3,6 +3,7 @@ package com.example.zonedhobbitsportfolio;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -51,6 +52,18 @@ public class ProjectActivity extends Activity {
 		
 		//	Set values
 		setValues();
+		
+		//	Test fonts        		
+        Typeface EdmondBold = Typeface.createFromAsset(getAssets(),"fonts/Edmondsans-Bold.otf");
+        Typeface EdmondMed = Typeface.createFromAsset(getAssets(), "fonts/Edmondsans-Medium.otf");
+        Typeface Edmond = Typeface.createFromAsset(getAssets(), "fonts/Edmondsans-Regular.otf");
+        
+        Typeface PTSans = Typeface.createFromAsset(getAssets(), "fonts/PTSans.ttc");
+        
+        header.setTypeface(EdmondBold);
+        tagline.setTypeface(PTSans, Typeface.ITALIC);
+        desc.setTypeface(PTSans);
+        
 	}
 
 	@Override

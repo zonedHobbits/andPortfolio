@@ -26,16 +26,22 @@
 	        android:id="@+id/text_tagline_project"
 	        android:layout_width="match_parent"
 	        android:background="@color/divider_text"
-	        android:padding="34dp"
+	        android:lineSpacingExtra="10sp"
+	        android:textSize="18sp"
+	        android:paddingBottom="34dp"
+	        android:paddingTop="40dp"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/text_header_project"
 	        android:textStyle="italic"
+	        android:gravity="center"
 	        android:text="" />
 	    
 	    <TextView
 	        android:id="@+id/text_desc_project"
 	        android:layout_width="match_parent"
 	        android:background="@color/divider_text"
+	        android:lineSpacingExtra="10sp"
+	        android:textSize="18sp"
 	        android:paddingTop="0dp"
 	        android:paddingBottom="34dp"
 	        android:paddingLeft="34dp"
@@ -52,7 +58,6 @@
 	        android:background="@color/divider_text"
 			android:dividerHeight="0dp"
 			android:divider="@null"
-			android:paddingBottom="20dp"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/text_desc_project">
 

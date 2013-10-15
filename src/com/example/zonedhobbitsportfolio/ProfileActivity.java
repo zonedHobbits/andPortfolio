@@ -8,9 +8,12 @@ import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -74,6 +77,7 @@ public class ProfileActivity extends Activity {
         
         CustomAdapter test1 = new CustomAdapter(this, listSelectedWork.getId(), projects);  
         listSelectedWork.setAdapter(test1);
+        setListViewHeightBasedOnChildren(listSelectedWork);
 		
         //	Dump in vars
         profileText.setText(p.getName());
@@ -93,6 +97,8 @@ public class ProfileActivity extends Activity {
         Typeface EdmondBold = Typeface.createFromAsset(getAssets(),"fonts/Edmondsans-Bold.otf");
         Typeface EdmondMed = Typeface.createFromAsset(getAssets(), "fonts/Edmondsans-Medium.otf");
         Typeface Edmond = Typeface.createFromAsset(getAssets(), "fonts/Edmondsans-Regular.otf");
+        
+        
         
         Typeface PTSans = Typeface.createFromAsset(getAssets(), "fonts/PTSans.ttc");
         
@@ -130,5 +136,25 @@ public class ProfileActivity extends Activity {
 		Log.i("PROJECTS", projects.toString());
 		return projects[pos];
 	}
+	
+	public static void setListViewHeightBasedOnChildren(GridView x) {
+		ListAdapter listAdapter = x.getAdapter(); 
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, x);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = x.getLayoutParams();
+        params.height = totalHeight;
+        x.setLayoutParams(params);
+        x.requestLayout();
+    }
 
 }
