@@ -41,7 +41,7 @@ public class ProjectActivity extends Activity {
 		i = getIntent();
 		p = ProfileActivity.returnProject(i.getIntExtra("pos", 0));
 		
-		Log.i("P.SHOTS", p.toString());
+		Log.i("P.SHOTS", p.getShots().toString());
 		
 		//Set the adapter to the ListView
 		CustomAdapter imgAdapter = new CustomAdapter(this, lvImg.getId(), p.getShots());
