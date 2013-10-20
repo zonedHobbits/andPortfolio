@@ -16,7 +16,7 @@ public class SplashScreenActivity extends Activity {
     super.onCreate(savedInstanceState);
     
     GifWebView view = new GifWebView(this, "file:///android_asset/ring.gif"); 
-    setContentView(view);
+    setContentView(R.layout.activity_splash_screen);
     
     view.setBackgroundColor(Color.BLACK);
     
