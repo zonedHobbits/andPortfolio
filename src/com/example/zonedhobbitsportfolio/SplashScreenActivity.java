@@ -25,7 +25,7 @@ public class SplashScreenActivity extends Activity {
     
     superView.addView(view);
     
-    superView.setBackgroundColor(Color.BLACK);
+      superView.setBackgroundColor(Color.BLACK);
     view.setBackgroundColor(Color.BLACK);
     
     view.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
