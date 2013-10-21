@@ -79,19 +79,66 @@ public class Fetcher extends AsyncTask<String, Void, Person> {
 			//look for the general JSON object
 			JSONObject jObject = new JSONObject(json);
 	   		//look for the strings in the JSON object
-	   		String name = jObject.getString("name");
-	   		String nick_name = jObject.getString("nick_name");
-	   		String normal_img = jObject.getString("normal_img");
-	   		String fun_img = jObject.getString("fun_img");
-	   		String quote = jObject.getString("quote");
-	   		String bio = jObject.getString("bio");
-	   		//look for the JSON object contact
+			
+			String name;
+			String nick_name;
+			String normal_img;
+			String fun_img;
+			String quote;
+			String bio;
+			
+			String email;
+			String twitter;
+			String github;
+			String phone;
+			String url;
+			
+			if (!jObject.isNull("name")) {
+				name = jObject.getString("name");
+	   		} else {name = null;}
+			
+			if(!jObject.isNull("nick_name")) {
+				nick_name = jObject.getString("nick_name");
+	   		} else {nick_name = null;}
+	   		
+			if(!jObject.isNull("normal_img")) {
+				normal_img = jObject.getString("normal_img");
+			} else {normal_img = null;}
+	   		
+			if(!jObject.isNull("fun_img")) {
+				fun_img = jObject.getString("fun_img");
+			} else {fun_img = null;}
+	   		
+			if(!jObject.isNull("quote")) {
+				quote = jObject.getString("quote");
+			} else {quote = null;}
+	   		
+			if(!jObject.isNull("bio")) {
+				bio = jObject.getString("bio");
+			} else {bio = null;}
+			
+			//look for the JSON object contact
 	   		JSONObject jObjectContact = jObject.getJSONObject("contact");
-	   		String email = jObjectContact.getString("email");
-	   		String twitter = jObjectContact.getString("twitter");
-	   		String github = jObjectContact.getString("github");
-	   		String phone = jObjectContact.getString("phone");
-	   		String url = jObjectContact.getString("url");
+	   		
+	   		if(!jObjectContact.isNull("email")) {
+	   			email = jObjectContact.getString("email");
+	   		} else {email = null;}
+	   		
+	   		if(!jObjectContact.isNull("twitter")) {
+	   			twitter = jObjectContact.getString("twitter");
+	   		} else {twitter = null;}
+	   		
+	   		if(!jObjectContact.isNull("github")) {
+	   			github = jObjectContact.getString("github");
+	   		} else {github = null;}
+	   		
+	   		if(!jObjectContact.isNull("phone")) {
+	   			phone = jObjectContact.getString("phone");
+	   		} else {phone = null;}
+	   		
+	   		if(!jObjectContact.isNull("url")) {
+	   			url = jObjectContact.getString("url");
+	   		} else {url = null;}
 	   		
 	   		//Get the strings in the jObject2.
 	   		JSONArray jArrayProjects = jObject.getJSONArray("projects");
