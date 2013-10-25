@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 
         //Fetch the info from the server and add it to the person object created before.
 
-        setUpInfo("http://puertosur.com.ar/Martin/andPorfolio/zhPortfolioAPI.php");
+        setUpInfo("http://172.16.3.123:8888/fold/zhPortfolioAPI.php");
 		setUpInfo("http://fredrik-andersson.se/zh/zhPortfolioAPI.php");
         setUpInfo("http://alphahw.eu/zh/zhPortfolioAPI.php");
         
